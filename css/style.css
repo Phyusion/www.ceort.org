@@ -1831,7 +1831,7 @@ ul, ol {
 }
 
 .person-card.expanded .person-bio {
-  max-height: 200px;
+  max-height: 600px;
   opacity: 1;
   padding: 10px 0 4px 60px;
 }
@@ -1914,6 +1914,106 @@ ul, ol {
 
   .person-card.expanded .person-bio {
     padding-left: 0;
+  }
+}
+
+/* ===== Feature Logo (for initiative logos) ===== */
+.feature-logo {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== Founding Story Image ===== */
+.founding-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.founding-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.founding-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.founding-text .lead-text {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .founding-story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .founding-text .lead-text {
+    text-align: center;
+  }
+}
+
+/* ===== Podcast Section ===== */
+.podcast-card {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: all var(--transition);
+}
+
+.podcast-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.podcast-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+}
+
+.podcast-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.podcast-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.podcast-body p {
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .podcast-card {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
