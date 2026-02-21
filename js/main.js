@@ -95,6 +95,31 @@
   });
 })();
 
+// ===== Expandable Person Bios =====
+(function() {
+  var cards = document.querySelectorAll('.person-card.expandable');
+  if (!cards.length) return;
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var wasExpanded = card.classList.contains('expanded');
+      // Close all other expanded cards
+      cards.forEach(function(c) { c.classList.remove('expanded'); });
+      // Toggle this card
+      if (!wasExpanded) {
+        card.classList.add('expanded');
+      }
+    });
+
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+})();
+
 // ===== Smooth Scroll for Hash Links =====
 (function() {
   document.addEventListener('click', function(e) {
