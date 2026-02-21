@@ -2396,6 +2396,150 @@ body.nav-open {
   }
 }
 
+/* ===== AI/ML Portfolio Section ===== */
+.ai-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.ai-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.ai-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-gold-light), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.ai-card:hover::before {
+  opacity: 1;
+}
+
+.ai-card:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+  background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ai-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ai-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(201, 168, 76, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.ai-card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ai-card h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.ai-card p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.ai-card-meta {
+  margin-bottom: 20px;
+}
+
+.ai-card-image-block {
+  width: 100%;
+  height: 160px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ai-card-img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.ai-card-companies {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 12px;
+}
+
+.ai-card-companies span {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.ai-card-companies strong {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .ai-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-card {
+    padding: 28px;
+  }
+
+  .ai-card-image-block {
+    height: 120px;
+  }
+}
+
 /* ===== Utility Classes ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
