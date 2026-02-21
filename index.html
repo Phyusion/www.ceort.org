@@ -25,6 +25,7 @@
         <a href="members.html">Members</a>
         <a href="events.html">Events</a>
         <a href="news.html">News</a>
+        <a href="donate.html">Donate</a>
         <a href="contact.html" class="nav-cta">Get Involved</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -183,15 +184,22 @@
         <h2>Precision Signals Podcast</h2>
         <p>Conversations at the intersection of oncology, data science, and innovation &mdash; hosted by the CEO Roundtable on Cancer.</p>
       </div>
-      <div class="podcast-card fade-in">
-        <div class="podcast-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.804 0 12c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 20.55 23.971 18.196 24 12c-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 4-8 4z"/></svg>
+      <div class="podcast-card-enhanced fade-in">
+        <div class="podcast-visual">
+          <img src="images/precision-signals-logo.png" alt="Precision Signals" class="podcast-logo">
+          <div class="podcast-waveform">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
         </div>
         <div class="podcast-body">
           <h3>Precision Signals</h3>
           <p>Explore the latest insights on precision oncology, AI-driven research, and breakthrough therapies. Tune in to hear from leading experts shaping the future of cancer care.</p>
           <a href="https://www.youtube.com/@PrecisionSignals" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Watch on YouTube <span class="arrow">&rarr;</span></a>
         </div>
+      </div>
+      <div class="fade-in" style="max-width: 900px; margin: 32px auto 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/9;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed?listType=playlist&list=UUaFDT_bRrAwsNo4WFUteVjw" title="Precision Signals Latest Episode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: 0;"></iframe>
       </div>
     </div>
   </section>
@@ -205,26 +213,26 @@
         <p>Stay updated on the latest developments from the CEO Roundtable on Cancer and its initiatives.</p>
       </div>
       <div class="news-grid">
-        <div class="news-card fade-in">
+        <a href="news.html" class="news-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="news-card-image">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="news-card-body">
             <div class="date">2025</div>
             <h3>Two Esteemed Oncology Leaders Join Life Sciences Council</h3>
             <p>The CEO Roundtable on Cancer appoints Dr. Kim Rathmell and Dr. Sunil Verma to its Life Sciences Council to strengthen oncology leadership.</p>
           </div>
-        </div>
-        <div class="news-card fade-in">
+        </a>
+        <a href="news.html" class="news-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="news-card-image">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15l-2 5l9-11h-5l2-5L7 15z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15l-2 5l9-11h-5l2-5L7 15z"/></svg>
           </div>
           <div class="news-card-body">
             <div class="date">2024</div>
             <h3>Going for Gold Initiative Advances Equitable Cancer Care</h3>
             <p>The CEO Roundtable on Cancer launches its Going for Gold initiative to partner Gold Standard companies with HBCUs and minority-serving institutions.</p>
           </div>
-        </div>
+        </a>
       </div>
       <div class="text-center mt-6">
         <a href="news.html" class="btn btn-outline btn-sm">View All News <span class="arrow">&rarr;</span></a>
@@ -250,7 +258,6 @@
       <div class="footer-grid">
         <div class="footer-about">
           <a href="index.html" class="footer-logo">
-            <img src="images/logo.png" alt="CEORT" class="logo-img">
             <span class="name">CEO Roundtable on Cancer</span>
           </a>
           <p>Making continual progress toward the elimination of cancer as a personal disease and public health problem since 2001.</p>
