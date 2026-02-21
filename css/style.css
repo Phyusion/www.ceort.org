@@ -2268,6 +2268,134 @@ body.nav-open {
   }
 }
 
+/* ===== Event Showcase ===== */
+.event-showcase {
+  padding: 0;
+  position: relative;
+}
+
+.event-showcase-inner {
+  position: relative;
+  max-width: var(--max-width);
+  margin: -40px auto 0;
+  padding: 0 1.5rem;
+}
+
+.event-showcase-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-gold-light), var(--color-accent));
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  z-index: 3;
+}
+
+.event-showcase-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+.event-showcase-overlay {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 0;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    to top,
+    rgba(28, 25, 23, 0.92) 0%,
+    rgba(28, 25, 23, 0.5) 40%,
+    rgba(28, 25, 23, 0.1) 70%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.event-showcase-content {
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  padding: 48px;
+  z-index: 2;
+  color: white;
+}
+
+.event-showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.event-showcase-content h2 {
+  color: white;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  max-width: 600px;
+  letter-spacing: -0.02em;
+}
+
+.event-showcase-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .event-showcase-inner {
+    margin-top: -24px;
+  }
+
+  .event-showcase-img {
+    height: 360px;
+  }
+
+  .event-showcase-content {
+    padding: 28px 24px;
+  }
+
+  .event-showcase-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .event-showcase-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-showcase-img {
+    height: 280px;
+  }
+
+  .event-showcase-content {
+    padding: 20px;
+  }
+}
+
 /* ===== Utility Classes ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
