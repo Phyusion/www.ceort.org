@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.pledge.to/embed/widget.js" async="async"></script>
 </head>
 <body>
 
@@ -85,42 +86,7 @@
         </div>
 
         <div class="donate-form-wrapper">
-          <div class="donate-card">
-            <h3>Choose Your Gift Amount</h3>
-            <div class="donate-amounts">
-              <button class="donate-amount-btn" data-amount="50">$50</button>
-              <button class="donate-amount-btn" data-amount="100">$100</button>
-              <button class="donate-amount-btn active" data-amount="250">$250</button>
-              <button class="donate-amount-btn" data-amount="500">$500</button>
-              <button class="donate-amount-btn" data-amount="1000">$1,000</button>
-              <button class="donate-amount-btn" data-amount="5000">$5,000</button>
-            </div>
-            <div class="form-group">
-              <label for="customAmount">Or enter a custom amount</label>
-              <div class="donate-input-wrapper">
-                <span class="donate-currency">$</span>
-                <input type="number" id="customAmount" name="customAmount" placeholder="Other amount" min="1">
-              </div>
-            </div>
-
-            <div class="donate-frequency">
-              <label class="donate-radio">
-                <input type="radio" name="frequency" value="one-time" checked>
-                <span class="donate-radio-label">One-Time Gift</span>
-              </label>
-              <label class="donate-radio">
-                <input type="radio" name="frequency" value="monthly">
-                <span class="donate-radio-label">Monthly Gift</span>
-              </label>
-            </div>
-
-            <a href="contact.html" class="btn btn-primary btn-lg donate-submit-btn">Donate Now <span class="arrow">&rarr;</span></a>
-
-            <div class="donate-secure">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>Secure &amp; encrypted donation</span>
-            </div>
-          </div>
+          <div class="plg-donate" data-widget-id="JhjkLB8Kap88b48OQ9u3Dw"></div>
         </div>
       </div>
     </div>
@@ -241,25 +207,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Donation amount selector
-    (function() {
-      var buttons = document.querySelectorAll('.donate-amount-btn');
-      var customInput = document.getElementById('customAmount');
-      if (!buttons.length) return;
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          buttons.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          if (customInput) customInput.value = '';
-        });
-      });
-      if (customInput) {
-        customInput.addEventListener('focus', function() {
-          buttons.forEach(function(b) { b.classList.remove('active'); });
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
