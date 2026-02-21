@@ -83,7 +83,7 @@
     // Simulate form submission (replace with actual endpoint)
     setTimeout(function() {
       btn.innerHTML = 'Message Sent!';
-      btn.style.background = 'var(--color-teal)';
+      btn.style.background = 'var(--color-sage)';
 
       setTimeout(function() {
         btn.innerHTML = originalText;
