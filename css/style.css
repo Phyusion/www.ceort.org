@@ -1141,6 +1141,12 @@ ul, ol {
   line-height: 1.7;
 }
 
+.footer-address {
+  margin-top: 12px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
 .footer-col h4 {
   color: var(--color-accent);
   font-size: 0.82rem;
