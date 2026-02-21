@@ -2017,6 +2017,230 @@ ul, ol {
   }
 }
 
+/* ===== Donation Page ===== */
+.donate-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.donate-info h2 {
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.donate-info > p {
+  color: var(--color-text-light);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.donate-impact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.donate-impact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.donate-impact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.donate-impact-item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.donate-impact-item p {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.donate-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  box-shadow: var(--shadow-md);
+}
+
+.donate-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.donate-amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.donate-amount-btn {
+  padding: 14px 8px;
+  border: 2px solid var(--color-light-gray);
+  border-radius: var(--radius-sm);
+  background: white;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.donate-amount-btn:hover {
+  border-color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.donate-amount-btn.active {
+  border-color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--color-primary-dark);
+}
+
+.donate-input-wrapper {
+  position: relative;
+}
+
+.donate-currency {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: var(--color-dark-gray);
+}
+
+.donate-input-wrapper input {
+  padding-left: 32px;
+}
+
+.donate-frequency {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 24px;
+}
+
+.donate-radio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: 2px solid var(--color-light-gray);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.donate-radio:hover {
+  border-color: var(--color-accent);
+}
+
+.donate-radio input[type="radio"] {
+  accent-color: var(--color-accent);
+}
+
+.donate-radio input[type="radio"]:checked + .donate-radio-label {
+  font-weight: 600;
+}
+
+.donate-radio-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.donate-submit-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.donate-secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--color-dark-gray);
+}
+
+.donate-tax-info {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+}
+
+.donate-tax-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.donate-tax-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.donate-tax-info p {
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .donate-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .donate-amounts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donate-tax-info {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
 /* ===== Utility Classes ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
