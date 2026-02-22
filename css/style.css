@@ -1966,12 +1966,99 @@ body.nav-open {
   max-height: 220px;
 }
 
+/* ===== Initiative Lead Section (PDS) ===== */
+.initiative-lead {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.initiative-lead-badge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 28px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.initiative-lead-logo {
+  max-width: 72px;
+  max-height: 72px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(10deg) brightness(0.85);
+}
+
+.initiative-lead h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.initiative-lead-subtitle {
+  color: var(--color-accent) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600;
+  margin-bottom: 24px !important;
+}
+
+.initiative-lead > p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.initiative-lead > p strong {
+  color: rgba(255,255,255,0.85);
+}
+
+.initiative-lead-stats {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  margin-bottom: 36px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.initiative-lead-stat {
+  text-align: center;
+}
+
+.initiative-lead-stat .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.initiative-lead-stat .label {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ===== Initiative Cards Grid ===== */
+.initiative-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 /* ===== Initiative Hero Card (horizontal card with bg image) ===== */
 .initiative-hero {
   position: relative;
   border-radius: var(--radius-xl);
-  padding: 56px 60px;
-  min-height: 320px;
+  padding: 52px 56px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   background-size: contain;
@@ -1982,11 +2069,16 @@ body.nav-open {
   transition: all var(--transition);
 }
 
+.initiative-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+}
+
 .initiative-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(28,25,23,0.97) 40%, rgba(28,25,23,0.7) 65%, rgba(28,25,23,0.3) 100%);
+  background: linear-gradient(to right, rgba(28,25,23,0.97) 35%, rgba(28,25,23,0.75) 60%, rgba(28,25,23,0.35) 100%);
   border-radius: var(--radius-xl);
   z-index: 1;
 }
@@ -1994,7 +2086,7 @@ body.nav-open {
 .initiative-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 620px;
+  max-width: 600px;
 }
 
 .initiative-hero-content .overline {
@@ -2009,8 +2101,8 @@ body.nav-open {
 
 .initiative-hero-content h3 {
   color: white;
-  font-size: 1.6rem;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
   letter-spacing: -0.02em;
 }
 
@@ -2018,7 +2110,7 @@ body.nav-open {
   color: rgba(255,255,255,0.65);
   line-height: 1.7;
   margin-bottom: 16px;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
 }
 
 .initiative-hero-content .feature-list {
@@ -2027,6 +2119,7 @@ body.nav-open {
 
 .initiative-hero-content .feature-list li {
   color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
 }
 
 .initiative-hero-content .feature-list li::before {
@@ -2038,16 +2131,44 @@ body.nav-open {
   color: var(--color-accent);
 }
 
+.initiative-hero-content .btn {
+  margin-top: 8px;
+}
+
+/* Light variant for Gold Standard / Going for Gold */
+.initiative-hero-light {
+  background-color: var(--color-primary);
+}
+
+.initiative-hero-light::before {
+  background: linear-gradient(to right, rgba(41,37,36,0.96) 35%, rgba(41,37,36,0.7) 60%, rgba(41,37,36,0.3) 100%);
+}
+
 @media (max-width: 768px) {
+  .initiative-lead-stats {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
   .initiative-hero {
     padding: 36px 28px;
-    background-position: top right;
-    background-size: 50%;
+    background-size: 45%;
     min-height: auto;
   }
 
   .initiative-hero::before {
-    background: linear-gradient(to right, rgba(28,25,23,0.97) 50%, rgba(28,25,23,0.85) 100%);
+    background: linear-gradient(to right, rgba(28,25,23,0.97) 50%, rgba(28,25,23,0.88) 100%);
+  }
+
+  .initiative-hero-light::before {
+    background: linear-gradient(to right, rgba(41,37,36,0.97) 50%, rgba(41,37,36,0.88) 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .initiative-lead-stats {
+    flex-direction: column;
+    gap: 16px;
   }
 }
 
