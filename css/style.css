@@ -2495,7 +2495,7 @@ body.nav-open {
 
 .ai-card-img {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 100px;
   object-fit: contain;
 }
 
