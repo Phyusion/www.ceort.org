@@ -1966,18 +1966,89 @@ body.nav-open {
   max-height: 220px;
 }
 
-/* Standalone image block (no wrapper box) */
-.feature-standalone {
+/* ===== Initiative Hero Card (horizontal card with bg image) ===== */
+.initiative-hero {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 56px 60px;
+  min-height: 320px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+  transition: all var(--transition);
 }
 
-.feature-standalone-img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: contain;
+.initiative-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(28,25,23,0.97) 40%, rgba(28,25,23,0.7) 65%, rgba(28,25,23,0.3) 100%);
+  border-radius: var(--radius-xl);
+  z-index: 1;
+}
+
+.initiative-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.initiative-hero-content .overline {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.initiative-hero-content h3 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.initiative-hero-content p {
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.initiative-hero-content .feature-list {
+  margin-bottom: 0;
+}
+
+.initiative-hero-content .feature-list li {
+  color: rgba(255,255,255,0.6);
+}
+
+.initiative-hero-content .feature-list li::before {
+  background: var(--color-accent);
+  opacity: 0.3;
+}
+
+.initiative-hero-content .feature-list li::after {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .initiative-hero {
+    padding: 36px 28px;
+    background-position: top right;
+    background-size: 50%;
+    min-height: auto;
+  }
+
+  .initiative-hero::before {
+    background: linear-gradient(to right, rgba(28,25,23,0.97) 50%, rgba(28,25,23,0.85) 100%);
+  }
 }
 
 /* ===== Founding Story Image ===== */
