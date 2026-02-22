@@ -1966,6 +1966,212 @@ body.nav-open {
   max-height: 220px;
 }
 
+/* ===== Initiative Lead Section (PDS) ===== */
+.initiative-lead {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.initiative-lead-badge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 28px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.initiative-lead-logo {
+  max-width: 72px;
+  max-height: 72px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(10deg) brightness(0.85);
+}
+
+.initiative-lead h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.initiative-lead-subtitle {
+  color: var(--color-accent) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600;
+  margin-bottom: 24px !important;
+}
+
+.initiative-lead > p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.initiative-lead > p strong {
+  color: rgba(255,255,255,0.85);
+}
+
+.initiative-lead-stats {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  margin-bottom: 36px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.initiative-lead-stat {
+  text-align: center;
+}
+
+.initiative-lead-stat .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.initiative-lead-stat .label {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ===== Initiative Cards Grid ===== */
+.initiative-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===== Initiative Hero Card (horizontal card with bg image) ===== */
+.initiative-hero {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 52px 56px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.initiative-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+}
+
+.initiative-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(28,25,23,0.97) 35%, rgba(28,25,23,0.75) 60%, rgba(28,25,23,0.35) 100%);
+  border-radius: var(--radius-xl);
+  z-index: 1;
+}
+
+.initiative-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.initiative-hero-content .overline {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.initiative-hero-content h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.initiative-hero-content p {
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-size: 0.93rem;
+}
+
+.initiative-hero-content .feature-list {
+  margin-bottom: 0;
+}
+
+.initiative-hero-content .feature-list li {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+.initiative-hero-content .feature-list li::before {
+  background: var(--color-accent);
+  opacity: 0.3;
+}
+
+.initiative-hero-content .feature-list li::after {
+  color: var(--color-accent);
+}
+
+.initiative-hero-content .btn {
+  margin-top: 8px;
+}
+
+/* Light variant for Gold Standard / Going for Gold */
+.initiative-hero-light {
+  background-color: var(--color-primary);
+}
+
+.initiative-hero-light::before {
+  background: linear-gradient(to right, rgba(41,37,36,0.96) 35%, rgba(41,37,36,0.7) 60%, rgba(41,37,36,0.3) 100%);
+}
+
+@media (max-width: 768px) {
+  .initiative-lead-stats {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .initiative-hero {
+    padding: 36px 28px;
+    background-size: 45%;
+    min-height: auto;
+  }
+
+  .initiative-hero::before {
+    background: linear-gradient(to right, rgba(28,25,23,0.97) 50%, rgba(28,25,23,0.88) 100%);
+  }
+
+  .initiative-hero-light::before {
+    background: linear-gradient(to right, rgba(41,37,36,0.97) 50%, rgba(41,37,36,0.88) 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .initiative-lead-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 /* ===== Founding Story Image ===== */
 .founding-story {
   display: grid;
@@ -2413,21 +2619,43 @@ body.nav-open {
 .pds-examples-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 32px;
   margin-top: 8px;
 }
 
 .pds-example {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  min-height: 240px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: flex-end;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all var(--transition);
+  overflow: hidden;
 }
 
-.pds-example-img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  flex-shrink: 0;
+.pds-example::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,25,23,0.95) 30%, rgba(28,25,23,0.4) 70%, transparent 100%);
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+.pds-example:hover {
+  background-color: rgba(255,255,255,0.07);
+  border-color: rgba(201,168,76,0.2);
+}
+
+.pds-example-text {
+  position: relative;
+  z-index: 2;
 }
 
 .pds-example-text h3 {
@@ -2447,7 +2675,7 @@ body.nav-open {
 @media (max-width: 768px) {
   .pds-examples-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 }
 
