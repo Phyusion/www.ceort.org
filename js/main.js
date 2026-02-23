@@ -156,6 +156,64 @@
   }
 })();
 
+// ===== Expandable START Clauses Card =====
+(function() {
+  var card = document.querySelector('.start-expandable');
+  if (!card) return;
+
+  var header = card.querySelector('.start-expandable-header');
+  var intro = card.querySelector('.start-intro');
+
+  function toggleCard(e) {
+    if (e.target.closest('.start-expandable-body a')) return;
+    if (e.target.closest('.start-module-header')) return;
+    if (e.target.closest('.start-expandable-body') && card.classList.contains('expanded')) return;
+    card.classList.toggle('expanded');
+  }
+
+  if (header) header.addEventListener('click', toggleCard);
+  if (intro) intro.addEventListener('click', toggleCard);
+
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === card || e.target === header || header.contains(e.target)) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
+    }
+  });
+
+  // Auto-expand if navigated to via #start-clauses hash
+  if (window.location.hash === '#start-clauses') {
+    setTimeout(function() {
+      card.classList.add('expanded');
+    }, 400);
+  }
+
+  // Accordion modules within START Clauses
+  var modules = card.querySelectorAll('.start-module');
+  modules.forEach(function(mod) {
+    var btn = mod.querySelector('.start-module-header');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wasExpanded = mod.classList.contains('expanded');
+      // Close all modules
+      modules.forEach(function(m) { m.classList.remove('expanded'); });
+      // Toggle clicked module
+      if (!wasExpanded) {
+        mod.classList.add('expanded');
+      }
+      // Update aria-expanded
+      modules.forEach(function(m) {
+        var b = m.querySelector('.start-module-header');
+        if (b) b.setAttribute('aria-expanded', m.classList.contains('expanded'));
+      });
+    });
+  });
+})();
+
 // ===== Smooth Scroll for Hash Links =====
 (function() {
   document.addEventListener('click', function(e) {
