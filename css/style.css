@@ -2679,6 +2679,334 @@ body.nav-open {
   }
 }
 
+/* ===== irAEs Expandable Card ===== */
+.iraes-expandable {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  padding: 40px 48px;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.iraes-expandable:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 168, 76, 0.2);
+}
+
+.iraes-expandable-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.iraes-header-text .overline {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.iraes-header-text h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.iraes-subtitle {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.iraes-expand-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-gray);
+  transition: all var(--transition);
+  margin-top: 4px;
+}
+
+.iraes-expandable:hover .iraes-expand-icon {
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.iraes-expandable.expanded .iraes-expand-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.iraes-intro {
+  color: var(--color-text-light);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.iraes-expandable-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.4s ease;
+  padding-top: 0;
+}
+
+.iraes-expandable.expanded .iraes-expandable-body {
+  max-height: 5000px;
+  opacity: 1;
+  padding-top: 32px;
+}
+
+/* Timeline */
+.iraes-timeline {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 40px;
+}
+
+.iraes-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-light-gray));
+  border-radius: 1px;
+}
+
+.iraes-timeline-entry {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.iraes-timeline-entry:last-child {
+  margin-bottom: 0;
+}
+
+.iraes-timeline-marker {
+  position: absolute;
+  left: -36px;
+  top: 2px;
+}
+
+.iraes-timeline-marker::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+}
+
+.iraes-timeline-year {
+  display: inline-block;
+  margin-left: 28px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.iraes-timeline-content {
+  padding-top: 0;
+}
+
+.iraes-timeline-content h4 {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  margin-top: 28px;
+  letter-spacing: -0.01em;
+}
+
+.iraes-timeline-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.iraes-timeline-content ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.iraes-timeline-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-mid-gray);
+}
+
+/* Achievements */
+.iraes-section-title {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-light-gray);
+}
+
+.iraes-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.iraes-achievement-block {
+  background: var(--color-off-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.iraes-achievement-block h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.iraes-achievement-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.iraes-achievement-block ul li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.iraes-achievement-block ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Future Directions */
+.iraes-future {
+  margin-bottom: 32px;
+}
+
+.iraes-future ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 24px;
+}
+
+.iraes-future ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.iraes-future ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-sage);
+}
+
+/* Impact & Partners */
+.iraes-impact {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+
+.iraes-impact p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.iraes-partners p {
+  font-size: 0.85rem;
+  color: var(--color-dark-gray);
+  line-height: 1.6;
+}
+
+.iraes-partners strong {
+  color: var(--color-text);
+}
+
+/* irAEs responsive */
+@media (max-width: 1024px) {
+  .iraes-achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .iraes-expandable {
+    padding: 28px 24px;
+  }
+
+  .iraes-header-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .iraes-future ul {
+    grid-template-columns: 1fr;
+  }
+
+  .iraes-timeline {
+    padding-left: 28px;
+  }
+
+  .iraes-timeline-marker {
+    left: -28px;
+  }
+}
+
 /* ===== Utility Classes ===== */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
