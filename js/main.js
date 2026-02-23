@@ -122,6 +122,40 @@
   });
 })();
 
+// ===== Expandable irAEs Card =====
+(function() {
+  var card = document.querySelector('.iraes-expandable');
+  if (!card) return;
+
+  var header = card.querySelector('.iraes-expandable-header');
+  var intro = card.querySelector('.iraes-intro');
+
+  function toggle(e) {
+    // Don't toggle if clicking a link inside the expanded body
+    if (e.target.closest('.iraes-expandable-body a')) return;
+    card.classList.toggle('expanded');
+  }
+
+  if (header) header.addEventListener('click', toggle);
+  if (intro) intro.addEventListener('click', toggle);
+
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === card || e.target === header || header.contains(e.target)) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
+    }
+  });
+
+  // Auto-expand if navigated to via #iraes hash
+  if (window.location.hash === '#iraes') {
+    setTimeout(function() {
+      card.classList.add('expanded');
+    }, 400);
+  }
+})();
+
 // ===== Smooth Scroll for Hash Links =====
 (function() {
   document.addEventListener('click', function(e) {
