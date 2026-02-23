@@ -2774,71 +2774,71 @@ body.nav-open {
 /* Timeline */
 .iraes-timeline {
   position: relative;
+  padding-left: 32px;
   margin-bottom: 40px;
 }
 
+/* Vertical line */
+.iraes-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-light-gray));
+}
+
 .iraes-timeline-entry {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0 24px;
-  margin-bottom: 32px;
   position: relative;
+  margin-bottom: 28px;
 }
 
 .iraes-timeline-entry:last-child {
   margin-bottom: 0;
 }
 
-/* Vertical line between dots */
-.iraes-timeline-entry:not(:last-child)::before {
+/* Gold dot on the line */
+.iraes-timeline-entry::before {
   content: '';
   position: absolute;
-  left: 60px;
-  top: 22px;
-  bottom: -32px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent), var(--color-light-gray));
-  transform: translateX(-1px);
-}
-
-.iraes-timeline-marker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-top: 2px;
-}
-
-.iraes-timeline-marker::before {
-  content: '';
-  flex-shrink: 0;
+  left: -32px;
+  top: 5px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--color-accent);
   border: 2px solid white;
   box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+  z-index: 1;
+}
+
+.iraes-timeline-marker {
+  margin-bottom: 6px;
 }
 
 .iraes-timeline-year {
+  display: inline-block;
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-accent);
   letter-spacing: 0.03em;
-  white-space: nowrap;
+  background: rgba(201, 168, 76, 0.08);
+  padding: 2px 10px;
+  border-radius: 4px;
 }
 
 .iraes-timeline-content h4 {
   font-size: 1.05rem;
   color: var(--color-text);
-  margin-bottom: 10px;
-  margin-top: 0;
-  padding-top: 0;
+  margin: 8px 0 10px;
   letter-spacing: -0.01em;
 }
 
 .iraes-timeline-content ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .iraes-timeline-content ul li {
@@ -2994,25 +2994,12 @@ body.nav-open {
     grid-template-columns: 1fr;
   }
 
-  .iraes-timeline-entry {
-    grid-template-columns: 1fr;
-    padding-left: 28px;
+  .iraes-timeline {
+    padding-left: 24px;
   }
 
-  .iraes-timeline-entry:not(:last-child)::before {
-    left: 5px;
-    top: 22px;
-    bottom: -32px;
-  }
-
-  .iraes-timeline-marker {
-    margin-bottom: 8px;
-  }
-
-  .iraes-timeline-marker::before {
-    position: absolute;
-    left: -23px;
-    top: 4px;
+  .iraes-timeline-entry::before {
+    left: -24px;
   }
 }
 
