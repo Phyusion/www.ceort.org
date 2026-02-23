@@ -2774,41 +2774,43 @@ body.nav-open {
 /* Timeline */
 .iraes-timeline {
   position: relative;
-  padding-left: 36px;
   margin-bottom: 40px;
 }
 
-.iraes-timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent), var(--color-light-gray));
-  border-radius: 1px;
-}
-
 .iraes-timeline-entry {
-  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 24px;
   margin-bottom: 32px;
+  position: relative;
 }
 
 .iraes-timeline-entry:last-child {
   margin-bottom: 0;
 }
 
-.iraes-timeline-marker {
+/* Vertical line between dots */
+.iraes-timeline-entry:not(:last-child)::before {
+  content: '';
   position: absolute;
-  left: -36px;
-  top: 2px;
+  left: 60px;
+  top: 22px;
+  bottom: -32px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-light-gray));
+  transform: translateX(-1px);
+}
+
+.iraes-timeline-marker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 2px;
 }
 
 .iraes-timeline-marker::before {
   content: '';
-  position: absolute;
-  left: 2px;
-  top: 6px;
+  flex-shrink: 0;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -2818,25 +2820,19 @@ body.nav-open {
 }
 
 .iraes-timeline-year {
-  display: inline-block;
-  margin-left: 28px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
-}
-
-.iraes-timeline-content {
-  padding-top: 0;
 }
 
 .iraes-timeline-content h4 {
   font-size: 1.05rem;
   color: var(--color-text);
   margin-bottom: 10px;
-  margin-top: 28px;
+  margin-top: 0;
+  padding-top: 0;
   letter-spacing: -0.01em;
 }
 
@@ -2998,12 +2994,25 @@ body.nav-open {
     grid-template-columns: 1fr;
   }
 
-  .iraes-timeline {
+  .iraes-timeline-entry {
+    grid-template-columns: 1fr;
     padding-left: 28px;
   }
 
+  .iraes-timeline-entry:not(:last-child)::before {
+    left: 5px;
+    top: 22px;
+    bottom: -32px;
+  }
+
   .iraes-timeline-marker {
-    left: -28px;
+    margin-bottom: 8px;
+  }
+
+  .iraes-timeline-marker::before {
+    position: absolute;
+    left: -23px;
+    top: 4px;
   }
 }
 
