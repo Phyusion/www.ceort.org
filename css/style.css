@@ -2679,6 +2679,31 @@ body.nav-open {
   }
 }
 
+/* ===== Expandable Card Banner ===== */
+.expandable-card-banner {
+  margin: -40px -48px 24px;
+  height: 200px;
+  background-size: cover;
+  background-position: center top;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  position: relative;
+}
+
+.expandable-card-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+  .expandable-card-banner {
+    margin: -28px -24px 20px;
+    height: 150px;
+  }
+}
+
 /* ===== irAEs Expandable Card ===== */
 .iraes-expandable {
   background: white;
@@ -2688,6 +2713,7 @@ body.nav-open {
   transition: all var(--transition);
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
 .iraes-expandable:hover {
@@ -2793,7 +2819,7 @@ body.nav-open {
 .iraes-timeline-entry:not(:last-child)::before {
   content: '';
   position: absolute;
-  left: 60px;
+  left: 5px;
   top: 22px;
   bottom: -32px;
   width: 2px;
@@ -3025,6 +3051,7 @@ body.nav-open {
   transition: all var(--transition);
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
 .start-expandable:hover {
