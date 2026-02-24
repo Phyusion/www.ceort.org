@@ -3789,3 +3789,350 @@ body.nav-open {
     padding: 36px 24px;
   }
 }
+
+/* ===== 2025 Annual Meeting Expandable Card ===== */
+.am-expandable {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.am-expandable:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 168, 76, 0.2);
+}
+
+/* Banner */
+.am-banner {
+  position: relative;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+}
+
+.am-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 25, 23, 0.15) 0%,
+    rgba(28, 25, 23, 0.55) 60%,
+    rgba(28, 25, 23, 0.85) 100%
+  );
+}
+
+.am-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 40px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.am-banner-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.am-banner-date {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-accent-light);
+  letter-spacing: 0.02em;
+}
+
+/* Card Header */
+.am-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 40px 28px;
+}
+
+.am-header-text h3 {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.am-teaser {
+  color: var(--color-text-light);
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.am-expand-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-gray);
+  transition: all var(--transition);
+  margin-top: 2px;
+}
+
+.am-expandable:hover .am-expand-icon {
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.am-expandable.expanded .am-expand-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+/* Expandable Body */
+.am-expandable-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.5s ease;
+}
+
+.am-expandable.expanded .am-expandable-body {
+  max-height: 12000px;
+  opacity: 1;
+}
+
+/* Session Cards */
+.am-session {
+  display: flex;
+  gap: 20px;
+  padding: 28px 40px;
+  border-top: 1px solid var(--color-light-gray);
+  transition: background var(--transition);
+}
+
+.am-session:hover {
+  background: var(--color-cream);
+}
+
+.am-session-number {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary-dark);
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+}
+
+.am-session-content {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.am-session-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.am-session-text h4 {
+  font-size: 1.08rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.am-speakers {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.am-speakers svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+
+.am-session-text p {
+  color: var(--color-text-light);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* Session Photo */
+.am-session-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 110px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-off-white);
+}
+
+.am-session-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Key Themes */
+.am-themes {
+  padding: 36px 40px 40px;
+  border-top: 1px solid var(--color-light-gray);
+  background: var(--color-cream);
+}
+
+.am-themes-title {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.am-themes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.am-theme-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.am-theme-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(201, 168, 76, 0.25);
+  transform: translateY(-2px);
+}
+
+.am-theme-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.am-theme-card span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .am-themes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .am-banner {
+    height: 180px;
+  }
+
+  .am-banner-overlay {
+    padding: 20px 24px;
+  }
+
+  .am-banner-label {
+    font-size: 1.15rem;
+  }
+
+  .am-card-header {
+    padding: 24px 24px 20px;
+  }
+
+  .am-header-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .am-session {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .am-session-content {
+    flex-direction: column;
+  }
+
+  .am-session-photo {
+    width: 100%;
+    height: 180px;
+    order: -1;
+  }
+
+  .am-themes {
+    padding: 28px 24px 32px;
+  }
+
+  .am-themes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .am-theme-card {
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .am-banner {
+    height: 150px;
+  }
+
+  .am-themes-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .am-session-number {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+}
