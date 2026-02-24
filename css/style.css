@@ -2172,6 +2172,59 @@ body.nav-open {
   }
 }
 
+/* ===== Initiative Card Modern (white card with top banner) ===== */
+.initiative-card-modern {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  padding: 40px 48px;
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.initiative-card-modern:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 168, 76, 0.2);
+}
+
+.initiative-card-modern-content .overline {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.initiative-card-modern-content h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.initiative-card-modern-content p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-size: 0.93rem;
+}
+
+.initiative-card-modern-content .feature-list {
+  margin-bottom: 0;
+}
+
+.initiative-card-modern-content .btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .initiative-card-modern {
+    padding: 28px 24px;
+  }
+}
+
 /* ===== Founding Story Image ===== */
 .founding-story {
   display: grid;
