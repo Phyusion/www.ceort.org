@@ -2180,11 +2180,18 @@ body.nav-open {
   padding: 40px 48px;
   transition: all var(--transition);
   overflow: hidden;
+  min-height: 632px;
+  display: flex;
+  flex-direction: column;
 }
 
 .initiative-card-modern:hover {
   box-shadow: var(--shadow-lg);
   border-color: rgba(201, 168, 76, 0.2);
+}
+
+.initiative-card-modern-content {
+  flex: 1;
 }
 
 .initiative-card-modern-content .overline {
@@ -2222,6 +2229,7 @@ body.nav-open {
 @media (max-width: 768px) {
   .initiative-card-modern {
     padding: 28px 24px;
+    min-height: auto;
   }
 }
 
@@ -2767,6 +2775,7 @@ body.nav-open {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  min-height: 632px;
 }
 
 .iraes-expandable:hover {
@@ -3063,6 +3072,7 @@ body.nav-open {
 @media (max-width: 768px) {
   .iraes-expandable {
     padding: 28px 24px;
+    min-height: auto;
   }
 
   .iraes-header-text h3 {
@@ -3105,6 +3115,7 @@ body.nav-open {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  min-height: 632px;
 }
 
 .start-expandable:hover {
@@ -3643,6 +3654,7 @@ body.nav-open {
 @media (max-width: 768px) {
   .start-expandable {
     padding: 28px 24px;
+    min-height: auto;
   }
 
   .start-header-text h3 {
