@@ -4136,3 +4136,90 @@ body.nav-open {
     font-size: 0.75rem;
   }
 }
+
+/* ===== Expandable Card — Co-host, Overview, Quotes, Closing ===== */
+.am-cohost {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.am-overview {
+  padding: 28px 40px;
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.am-overview p {
+  color: var(--color-text-light);
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* Pull Quotes */
+.am-quote {
+  margin: 16px 0 4px;
+  padding: 16px 0 16px 20px;
+  border-left: 3px solid var(--color-accent);
+  background: none;
+}
+
+.am-quote-text {
+  color: var(--color-text);
+  font-size: 0.91rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.am-quote-attribution {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+/* Closing Quote */
+.am-closing {
+  padding: 36px 40px 40px;
+  border-top: 1px solid var(--color-light-gray);
+  background: var(--color-cream);
+  text-align: center;
+}
+
+.am-closing .am-quote {
+  border-left: none;
+  padding-left: 0;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.am-closing .am-quote-text {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.am-closing .am-quote-attribution {
+  font-size: 0.84rem;
+}
+
+/* Responsive — Overview, Quotes, Closing */
+@media (max-width: 768px) {
+  .am-overview {
+    padding: 20px 24px;
+  }
+
+  .am-closing {
+    padding: 28px 24px 32px;
+  }
+
+  .am-quote {
+    padding-left: 16px;
+  }
+}

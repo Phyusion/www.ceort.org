@@ -214,44 +214,50 @@
   });
 })();
 
-// ===== Expandable Annual Meeting Card =====
+// ===== Expandable Annual Meeting Cards =====
 (function() {
-  var card = document.querySelector('.am-expandable');
-  if (!card) return;
+  var cards = document.querySelectorAll('.am-expandable');
+  if (!cards.length) return;
 
-  var header = card.querySelector('.am-card-header');
+  cards.forEach(function(card) {
+    var header = card.querySelector('.am-card-header');
 
-  function toggleCard(e) {
-    // Don't toggle if clicking a link inside the expanded body
-    if (e.target.closest('.am-expandable-body a')) return;
-    // Don't toggle if clicking inside expanded body (except on header)
-    if (e.target.closest('.am-expandable-body') && card.classList.contains('expanded')) return;
-    card.classList.toggle('expanded');
-  }
-
-  // Toggle on header click
-  if (header) header.addEventListener('click', toggleCard);
-
-  // Toggle on banner click
-  var banner = card.querySelector('.am-banner');
-  if (banner) banner.addEventListener('click', toggleCard);
-
-  // Keyboard accessibility
-  card.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      if (e.target === card || e.target === header || (header && header.contains(e.target))) {
-        e.preventDefault();
-        card.classList.toggle('expanded');
-      }
+    function toggleCard(e) {
+      // Don't toggle if clicking a link inside the expanded body
+      if (e.target.closest('.am-expandable-body a')) return;
+      // Don't toggle if clicking inside expanded body (except on header)
+      if (e.target.closest('.am-expandable-body') && card.classList.contains('expanded')) return;
+      card.classList.toggle('expanded');
     }
+
+    // Toggle on header click
+    if (header) header.addEventListener('click', toggleCard);
+
+    // Toggle on banner click
+    var banner = card.querySelector('.am-banner');
+    if (banner) banner.addEventListener('click', toggleCard);
+
+    // Keyboard accessibility
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target === card || e.target === header || (header && header.contains(e.target))) {
+          e.preventDefault();
+          card.classList.toggle('expanded');
+        }
+      }
+    });
   });
 
   // Auto-expand if navigated to via hash
-  if (window.location.hash === '#annual-meeting-2025') {
-    setTimeout(function() {
-      card.classList.add('expanded');
-      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 400);
+  var hash = window.location.hash;
+  if (hash) {
+    var target = document.querySelector(hash);
+    if (target && target.classList.contains('am-expandable')) {
+      setTimeout(function() {
+        target.classList.add('expanded');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 400);
+    }
   }
 })();
 
