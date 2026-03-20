@@ -1870,6 +1870,74 @@ body.nav-open {
   margin: 0;
 }
 
+/* ===== Life Sciences Council Sections ===== */
+.lsc-overview {
+  margin-bottom: 28px;
+  max-width: 800px;
+}
+
+.lsc-overview p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.lsc-overview p:last-child {
+  margin-bottom: 0;
+}
+
+.lsc-subsection-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 32px 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.lsc-accomplishments ul,
+.lsc-alumni ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lsc-accomplishments li,
+.lsc-alumni li {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  padding: 8px 0 8px 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+}
+
+.lsc-accomplishments li:last-child,
+.lsc-alumni li:last-child {
+  border-bottom: none;
+}
+
+.lsc-accomplishments li::before,
+.lsc-alumni li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.lsc-accomplishments strong {
+  color: var(--color-text);
+}
+
+.lsc-alumni strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* ===== Senior Leadership Cards ===== */
 .senior-grid {
   display: grid;
