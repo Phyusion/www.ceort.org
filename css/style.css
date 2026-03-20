@@ -1991,14 +1991,6 @@ body.nav-open {
 }
 
 /* Subsection titles */
-.lsc-subsection-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 32px 0 16px;
-  letter-spacing: -0.01em;
-}
-
 /* Accomplishments */
 .lsc-accomplishments ul {
   list-style: none;
