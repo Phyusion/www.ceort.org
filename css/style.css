@@ -1969,7 +1969,7 @@ body.nav-open {
 }
 
 .lsc-panel.expanded .lsc-panel-body {
-  max-height: 800px;
+  max-height: 2000px;
   opacity: 1;
   margin-top: 16px;
 }
