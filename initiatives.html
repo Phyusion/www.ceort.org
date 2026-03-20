@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Initiatives - CEO Roundtable on Cancer</title>
-  <meta name="description" content="Explore the CEO Roundtable on Cancer's key initiatives: CEO Cancer Gold Standard, Project Data Sphere, and Going for Gold.">
+  <meta name="description" content="Explore the CEO Roundtable on Cancer's key initiatives: CEO Cancer Gold Standard, Project Data Sphere, autoRECIST, Total Tumor Burden Index (TTBI), and Going for Gold.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1a2e">
   <link rel="canonical" href="https://www.ceort.org/initiatives.html">
+  <link rel="icon" href="images/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Initiatives - CEO Roundtable on Cancer">
-  <meta property="og:description" content="Explore the CEO Roundtable on Cancer's key initiatives: CEO Cancer Gold Standard, Project Data Sphere, and Going for Gold.">
+  <meta property="og:description" content="Explore the CEO Roundtable on Cancer's key initiatives: CEO Cancer Gold Standard, Project Data Sphere, autoRECIST, TTBI, and Going for Gold.">
   <meta property="og:url" content="https://www.ceort.org/initiatives.html">
   <meta property="og:image" content="https://www.ceort.org/images/og-image.png">
   <meta property="og:site_name" content="CEO Roundtable on Cancer">
@@ -23,6 +26,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.ceort.org/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Initiatives"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -59,67 +81,695 @@
     </div>
   </section>
 
-  <!-- Gold Standard -->
-  <section class="section" id="gold-standard">
+  <!-- Project Data Sphere -->
+  <section class="section-dark section-lg" id="pds">
     <div class="container">
-      <div class="feature-row">
-        <div class="feature-image fade-in-left" style="background: linear-gradient(135deg, #f7f0d8, #efe5b8);">
-          <img src="images/gold-standard-logo.png" alt="CEO Cancer Gold Standard" class="feature-logo">
+      <div class="initiative-lead fade-in">
+        <div class="initiative-lead-badge">
+          <img src="images/pds-logo.png" alt="Project Data Sphere" class="initiative-lead-logo">
         </div>
-        <div class="feature-content fade-in-right">
+        <h2>Project Data Sphere&reg;</h2>
+        <p class="initiative-lead-subtitle">An independent 501(c)(3) subsidiary of CEORT</p>
+        <p>Project Data Sphere breaks down barriers to cancer clinical trial data sharing. Operating two complementary programs&mdash;an <strong>open-access data sharing platform</strong> housing 252+ de-identified clinical trials and 250,000+ patient records (<a href="https://www.nejm.org/doi/10.1056/NEJMsb1702054" target="_blank" rel="noopener" style="color: var(--color-accent);">NEJM</a>), and <strong>closed-access precompetitive research projects</strong> where pharma, academia, the FDA, and technology partners collaborate on AI-driven oncology tools.</p>
+        <div class="initiative-lead-stats">
+          <div class="initiative-lead-stat">
+            <span class="number">252+</span>
+            <span class="label">Clinical Trials</span>
+          </div>
+          <div class="initiative-lead-stat">
+            <span class="number">250K+</span>
+            <span class="label">Patient Records</span>
+          </div>
+          <div class="initiative-lead-stat">
+            <span class="number">2</span>
+            <span class="label">AI/ML Programs</span>
+          </div>
+        </div>
+        <a href="https://www.projectdatasphere.org/" class="btn btn-primary" target="_blank" rel="noopener">Visit Project Data Sphere <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI/ML Portfolio -->
+  <section class="section" id="ai-ml-portfolio">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="overline">PDS AI/ML Portfolio</span>
+        <h2>Images &amp; Algorithms Program</h2>
+        <p>Through Project Data Sphere, CEORT develops AI-powered tools that transform clinical oncology imaging&mdash;in partnership with the FDA, leading pharma companies, and technology innovators.</p>
+      </div>
+      <div class="initiative-cards fade-in">
+        <div class="initiative-card-modern" id="autorecist">
+          <div class="expandable-card-banner" style="background-image: url('images/autorecist.png');"></div>
+          <div class="initiative-card-modern-content">
+            <span class="overline">AI &amp; Imaging</span>
+            <h3>autoRECIST</h3>
+            <p>A flagship initiative developed in consultation with the FDA. autoRECIST uses deep learning to automate and standardize RECIST 1.1 tumor response assessments&mdash;reducing ~30% inter-radiologist variability, lowering costs, and accelerating clinical trials.</p>
+            <ul class="feature-list">
+              <li>Automates RECIST 1.1 tumor response assessments</li>
+              <li>Developed in consultation with the FDA</li>
+              <li>Supported by J&amp;J, Merck, and Amgen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="initiative-card-modern" id="ttbi">
+          <div class="expandable-card-banner" style="background-image: url('images/ttbi.png');"></div>
+          <div class="initiative-card-modern-content">
+            <span class="overline">Volumetric Analysis</span>
+            <h3>Total Tumor Burden Index</h3>
+            <p>A novel deep learning model delivering quantitative, volumetric 3D assessments of tumor burden&mdash;a comprehensive and biologically meaningful alternative to traditional one-dimensional RECIST measurements.</p>
+            <ul class="feature-list">
+              <li>3D volumetric tumor burden quantification</li>
+              <li>More accurate than traditional 1D measurements</li>
+              <li>Improves outcome prediction and trial design</li>
+              <li>Captures complex tumor morphology</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- irAEs Program -->
+  <section class="section section-gray" id="iraes">
+    <div class="container">
+      <div class="iraes-expandable fade-in" tabindex="0">
+        <div class="expandable-card-banner" style="background-image: url('images/irae.png');"></div>
+        <div class="iraes-expandable-header">
+          <div class="iraes-header-text">
+            <span class="overline">Immunotherapy Safety</span>
+            <h3>Immune-Related Adverse Events (irAEs) Program</h3>
+            <p class="iraes-subtitle">A Transformational Journey in Oncology Safety Science</p>
+          </div>
+          <span class="iraes-expand-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <p class="iraes-intro">The irAEs program is Project Data Sphere&rsquo;s landmark initiative to define, understand, and mitigate immune-related adverse events associated with cancer immunotherapies. Launched in 2017 with FDA endorsement, this globally-recognized effort has transformed how the oncology ecosystem detects, diagnoses, and manages immunotherapy toxicities.</p>
+        <div class="iraes-expandable-body">
+
+          <div class="iraes-timeline">
+            <div class="iraes-timeline-entry">
+              <div class="iraes-timeline-marker">
+                <span class="iraes-timeline-year">2017</span>
+              </div>
+              <div class="iraes-timeline-content">
+                <h4>The Genesis</h4>
+                <ul>
+                  <li>FDA Oncology Center of Excellence issues Letter of Support to PDS</li>
+                  <li>Global Oncology Big Data Alliance (GOBDA) launched with Merck KGaA</li>
+                  <li>Regulatory framework established for real-world data sharing on immunotherapy safety</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="iraes-timeline-entry">
+              <div class="iraes-timeline-marker">
+                <span class="iraes-timeline-year">2017&ndash;2019</span>
+              </div>
+              <div class="iraes-timeline-content">
+                <h4>Convening the Community</h4>
+                <ul>
+                  <li>December 2017: Immune-Related Myocarditis Workshop (with Parker Institute)</li>
+                  <li>March 2018: Pediatric Immunotherapy Survivorship Roundtable</li>
+                  <li>Expanded focus to neurologic, dermatologic, endocrine, and multi-organ irAE syndromes</li>
+                  <li>Established multidisciplinary coalition spanning oncology, immunology, regulatory science, and patient advocacy</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="iraes-timeline-entry">
+              <div class="iraes-timeline-marker">
+                <span class="iraes-timeline-year">2019&ndash;2022</span>
+              </div>
+              <div class="iraes-timeline-content">
+                <h4>Building Scientific Infrastructure</h4>
+                <ul>
+                  <li>FDA-PDS Symposium on Immune-Related Adverse Events (2019)</li>
+                  <li>Gap analysis and knowledge prioritization</li>
+                  <li>Delphi methodology consensus development across organ systems</li>
+                  <li>Data standardization protocols for real-world evidence</li>
+                  <li>Foundation for FDA guidance published in 2022</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="iraes-timeline-entry">
+              <div class="iraes-timeline-marker">
+                <span class="iraes-timeline-year">2021&ndash;2024</span>
+              </div>
+              <div class="iraes-timeline-content">
+                <h4>Scientific Progress and Regulatory Impact</h4>
+                <ul>
+                  <li>July 2021: Neurologic irAEs consensus definitions (JITC)</li>
+                  <li>August 2022: Science commentary recognizes program&rsquo;s impact</li>
+                  <li>October 2022: FDA Draft Guidance for Industry on characterizing immune-mediated adverse reactions</li>
+                  <li>April 2024: Dermatologic irAEs consensus definitions</li>
+                  <li>September 2024: JCO publication demonstrates LLM superiority (94.7% sensitivity) over ICD codes (68.7%) for irAE detection</li>
+                  <li>October 2024: Four groundbreaking ICD-10-CM and MedDRA codes approved through ASPIRE/STORIES advocacy</li>
+                  <li>April 2025: Ophthalmic irAEs standardized guidance</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="iraes-timeline-entry">
+              <div class="iraes-timeline-marker">
+                <span class="iraes-timeline-year">2024&ndash;2025</span>
+              </div>
+              <div class="iraes-timeline-content">
+                <h4>Embedding Patients and AI</h4>
+                <ul>
+                  <li>March 2024: ASPIRE and STORIES inaugural meeting at Cleveland Clinic</li>
+                  <li>2025: ASCO recognizes both as Communities of Practice</li>
+                  <li>CRF harmonization initiative launched</li>
+                  <li>AI-powered safety surveillance tools validated</li>
+                  <li>Endocrine irAEs consensus definitions in development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="iraes-achievements">
+            <h4 class="iraes-section-title">Key Achievements</h4>
+            <div class="iraes-achievements-grid">
+              <div class="iraes-achievement-block">
+                <h5>Regulatory Framework</h5>
+                <ul>
+                  <li>FDA guidance on characterizing, collecting, and reporting immune-mediated adverse reactions</li>
+                  <li>Four new ICD-10-CM and MedDRA codes enabling systematic tracking across EHRs and claims databases</li>
+                  <li>Standardized case report forms for clinical trials</li>
+                </ul>
+              </div>
+              <div class="iraes-achievement-block">
+                <h5>Scientific Publications</h5>
+                <ul>
+                  <li>Consensus definitions for neurologic, dermatologic, and ophthalmic irAEs</li>
+                  <li>AI/NLP validation studies in Journal of Clinical Oncology</li>
+                  <li>Landmark papers in Journal for Immunotherapy of Cancer</li>
+                </ul>
+              </div>
+              <div class="iraes-achievement-block">
+                <h5>Infrastructure &amp; Innovation</h5>
+                <ul>
+                  <li>ASPIRE: Alliance for Support and Prevention of Immune-Related Events (physician-led)</li>
+                  <li>STORIES: Standing Together to Optimize Research, Interventions, and Education in irAEs (patient-led)</li>
+                  <li>Machine learning tools for real-time adverse event surveillance</li>
+                  <li>Global data harmonization protocols</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="iraes-future">
+            <h4 class="iraes-section-title">Future Directions</h4>
+            <ul>
+              <li>Biomarker-enabled irAE prediction tools</li>
+              <li>Global harmonization of adverse event definitions</li>
+              <li>Machine-readable safety reporting infrastructure</li>
+              <li>Prospective validation of irAE endpoints in oncology trials</li>
+              <li>International safety standards expansion</li>
+            </ul>
+          </div>
+
+          <div class="iraes-impact">
+            <p>The irAEs program has established the model for collaborative, data-driven safety science in the post-approval setting, ensuring that as cancer immunotherapies expand into earlier-stage disease and more diverse populations, scientific progress and patient safety advance in tandem.</p>
+          </div>
+
+          <div class="iraes-partners">
+            <p><strong>Partners:</strong> FDA, Merck KGaA, Parker Institute for Cancer Immunotherapy, Cleveland Clinic, Massachusetts General Hospital, and 28+ member organizations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- START Clauses -->
+  <section class="section" id="start-clauses">
+    <div class="container">
+      <div class="start-expandable fade-in" tabindex="0">
+        <div class="expandable-card-banner" style="background-image: url('images/contract.png');"></div>
+        <div class="start-expandable-header">
+          <div class="start-header-text">
+            <span class="overline">Clinical Trial Contracting</span>
+            <h3>START Clauses: Modernizing Clinical Trial Agreements in Oncology</h3>
+            <p class="start-subtitle">From 1.0 to 2.0: A Framework Evolution</p>
+          </div>
+          <span class="start-expand-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+        <p class="start-intro">Clinical trial startup delays driven by protracted legal negotiations remain a major bottleneck in oncology research. In response, CEORT, in partnership with the National Cancer Institute (NCI), launched the START Clauses initiative to streamline contracting through a standardized set of legal provisions. Building on the original framework&rsquo;s success, START Clauses 2.0 introduces a modular, next-generation framework addressing the growing complexity of modern oncology trials.</p>
+        <div class="start-expandable-body">
+
+          <!-- Original START Clauses -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">The Original START Clauses (2005&ndash;2011)</h4>
+            <p>The START initiative was built on a systematic and evidence-based foundation. CEORT mobilized its Life Sciences Consortium&mdash;comprising senior executives from 11 global pharmaceutical companies&mdash;and engaged legal experts, NCI officials, and academic research leaders in a unified effort to standardize clinical contracting practices. Drawing on actual redacted final contracts in use by both industry and 14 NCI-designated Cancer Centers, CEORT commissioned a detailed legal analysis of nearly 80 clinical trial agreements. The review revealed substantial convergence&mdash;exceeding 67%&mdash;across key legal categories, demonstrating that standardization was both feasible and capable of improving consistency without compromising institutional autonomy.</p>
+          </div>
+
+          <!-- Six Core Agreement Areas -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">Six Core Agreement Areas</h4>
+            <div class="start-core-areas-grid">
+              <div class="start-core-area">
+                <div class="start-core-area-number">1</div>
+                <div class="start-core-area-content">
+                  <h5>Intellectual Property</h5>
+                  <p>Standardized language for ownership and licensing of inventions arising from clinical trials, with special considerations for investigator-initiated studies</p>
+                </div>
+              </div>
+              <div class="start-core-area">
+                <div class="start-core-area-number">2</div>
+                <div class="start-core-area-content">
+                  <h5>Study Data</h5>
+                  <p>Clear terms for data collection, sharing, and analysis responsibilities between sponsors and investigators</p>
+                </div>
+              </div>
+              <div class="start-core-area">
+                <div class="start-core-area-number">3</div>
+                <div class="start-core-area-content">
+                  <h5>Indemnification</h5>
+                  <p>Balanced approach to risk allocation between research institutions and pharmaceutical sponsors</p>
+                </div>
+              </div>
+              <div class="start-core-area">
+                <div class="start-core-area-number">4</div>
+                <div class="start-core-area-content">
+                  <h5>Subject Injury</h5>
+                  <p>Guidelines for managing and compensating trial-related injuries to ensure participant protection</p>
+                </div>
+              </div>
+              <div class="start-core-area">
+                <div class="start-core-area-number">5</div>
+                <div class="start-core-area-content">
+                  <h5>Confidentiality</h5>
+                  <p>Standardized provisions for protecting proprietary information while enabling necessary information exchange</p>
+                </div>
+              </div>
+              <div class="start-core-area">
+                <div class="start-core-area-number">6</div>
+                <div class="start-core-area-content">
+                  <h5>Publication Rights</h5>
+                  <p>Framework balancing academic freedom to publish with sponsor&rsquo;s need to protect proprietary information</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Participating Organizations -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">Participating Organizations</h4>
+            <div class="start-orgs-grid">
+              <div class="start-org-column">
+                <h5>CEORT Life Sciences Consortium</h5>
+                <ul>
+                  <li>AstraZeneca</li>
+                  <li>Eli Lilly</li>
+                  <li>GSK</li>
+                  <li>J&amp;J</li>
+                  <li>Novartis</li>
+                  <li>OSI Pharmaceuticals</li>
+                  <li>Pfizer</li>
+                  <li>Quintiles</li>
+                  <li>Sanofi-Aventis</li>
+                  <li>Schering-Plough (2009, Merck)</li>
+                  <li>Wyeth (2009, Pfizer)</li>
+                </ul>
+              </div>
+              <div class="start-org-column">
+                <h5>NCI-designated Cancer Centers</h5>
+                <ul>
+                  <li>City of Hope</li>
+                  <li>Dana-Farber/Harvard</li>
+                  <li>Fox Chase</li>
+                  <li>Johns Hopkins</li>
+                  <li>Mayo Clinic</li>
+                  <li>MD Anderson</li>
+                  <li>Moffitt</li>
+                  <li>Roswell Park</li>
+                  <li>UNC Lineberger</li>
+                  <li>University of Arizona</li>
+                  <li>University of California, San Francisco</li>
+                  <li>University of Chicago</li>
+                  <li>University of Colorado</li>
+                  <li>University of Pittsburgh</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">Timeline</h4>
+            <div class="start-timeline">
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2005&ndash;2006</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Program Conception</h4>
+                  <ul>
+                    <li>CEORT identifies protracted CTA negotiations as systemic barrier</li>
+                    <li>CEORT Life Sciences Consortium and NCI begin discussions</li>
+                    <li>Scope defined to create harmonized, universally available contracting language</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2007&ndash;2008</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Legal Analysis &amp; Formal Clause Development</h4>
+                  <ul>
+                    <li>CEORT mobilizes 11 pharmaceutical companies and 14 NCI-designated Cancer Centers</li>
+                    <li>Redacted clinical trial agreements (~80 CTAs) collected for legal analysis</li>
+                    <li>Third-party legal experts identify convergence across six key domains</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2008</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Framework Finalization</h4>
+                  <ul>
+                    <li>Initial START Clauses completed</li>
+                    <li>Broad internal reviews by legal and operational teams</li>
+                    <li>Clauses validated as voluntary, non-binding starting point for negotiations</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2009</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Public Introduction</h4>
+                  <ul>
+                    <li>NCI formally publishes and introduces the START Clauses</li>
+                    <li>Positioned as national toolkit to streamline clinical trial contracting</li>
+                    <li>Emphasis on compatibility with company-sponsored and investigator-initiated trials</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2010</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Implementation</h4>
+                  <ul>
+                    <li>NCI Cancer Centers and LSC member companies begin using START Clauses</li>
+                    <li>Shared learnings circulated among institutions and sponsors</li>
+                    <li>CEORT promotes awareness through presentations and peer collaboration</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="start-timeline-entry">
+                <div class="start-timeline-marker">
+                  <span class="start-timeline-year">2011</span>
+                </div>
+                <div class="start-timeline-content">
+                  <h4>Impact Evaluation</h4>
+                  <ul>
+                    <li>NCI and CEORT conduct formal evaluation</li>
+                    <li>Results: 67% convergence in negotiated clauses, reduced timelines, strong acceptance as middle-ground framework</li>
+                    <li>Findings presented at ASCO and published in Journal of Clinical Oncology</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Assessment -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">Impact Assessment</h4>
+            <p class="start-impact-intro">Key findings from 2011 evaluation:</p>
+            <div class="start-impact-grid">
+              <div class="start-impact-card">
+                <h5>Comprehensive Methodology</h5>
+                <p>Analysis examined 78 CTAs from 11 pharmaceutical companies and 14 NCI-designated Cancer Centers, focusing on 6 key clause areas that traditionally caused negotiation delays</p>
+              </div>
+              <div class="start-impact-card">
+                <h5>High Convergence Rate</h5>
+                <p>Analysis identified 45 clause concepts with high convergence rates&mdash;exceeding 67% similarity&mdash;validating the premise that standardization can optimize and even eliminate duplicated effort in contractual negotiations</p>
+              </div>
+              <div class="start-impact-card">
+                <h5>Decreased Negotiation Time</h5>
+                <p>Stakeholders reported that CTA negotiation duration had decreased since the 2008 release of the START Clauses, with model language accepted as a practical compromise</p>
+              </div>
+            </div>
+            <div class="start-impact-conclusion">
+              <p>By offering pre-negotiated, vetted language for common legal terms, the START Clauses enabled faster alignment among stakeholders and contributed to more predictable trial startup timelines.</p>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="start-divider">
+
+          <!-- START Clauses 2.0 -->
+          <div class="start-section-block">
+            <h4 class="start-section-title start-section-title-accent">START Clauses 2.0: A Modular Toolkit for Modern Oncology</h4>
+            <p>Building on the original framework&rsquo;s success, CEORT is launching START Clauses 2.0&mdash;a modular, next-generation framework addressing the growing complexity of modern oncology trials. New modules cover key friction points such as CRO management, biospecimen governance, platform trial structures, digital health integration, AI-driven endpoints, and global data privacy compliance.</p>
+          </div>
+
+          <!-- New Modules Accordion -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">New Modules</h4>
+            <div class="start-modules-accordion">
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Biological Sample Management</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Biospecimens are central to precision oncology and long-term translational research, therefore, managing consent, storage, and future use introduces significant contractual complexity.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Standardized contractual clauses applicable for biobanking, genomic data use, specimen tracking, and reconsent procedures.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">CRO Management</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Contract Research Organizations (CROs) play an integral role in clinical trial execution, yet their involvement often complicates liability and oversight structures.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Templates for three-way agreements between sponsors, institutions, and CROs&mdash;including responsibilities, indemnification, and data handling.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Platform and Basket Trial Governance</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Adaptive clinical trials with multiple study arms and sponsors raise challenges around shared infrastructure, amendment management, and IP ownership.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Governance language for platform protocols, joint sponsor agreements, amendment workflows, and shared data/IP usage.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Digital Health Integration</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Remote monitoring, wearable devices, and eConsent platforms are increasingly integral to trial design, yet existing contracts rarely account for them.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Legal clauses relevant to device performance standards, patient-generated data, cloud-based workflows, and digital privacy compliance.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">AI and Algorithmic Endpoints</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> AI-driven endpoints, diagnostics, and decision tools are introducing unprecedented complexity in terms of validation, explainability, and ownership.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Clauses for algorithm validation, retraining protocols, regulatory disclosure, and IP rights over AI-generated insights.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Real-World Data (RWD) &amp; Secondary Use</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Trials that incorporate RWD or real-world evidence (RWE) face uncertainty around ownership, reuse, and integration across sources.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Standardized legal terms applicable for linking external datasets, managing reuse rights, and defining permissible analytics.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Data Privacy and Cross-Border Transfer</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> With adoption of more decentralized trials and inclusion of global patient populations, navigating data localization laws and privacy compliance is increasingly difficult.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Data handling terms aligned with HIPAA, GDPR, and other relevant laws, including transfer protocols, encryption standards, and re-identification safeguards.
+                  </div>
+                </div>
+              </div>
+
+              <div class="start-module">
+                <button class="start-module-header" aria-expanded="false">
+                  <span class="start-module-title">Global Harmonization</span>
+                  <span class="start-module-toggle" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </button>
+                <div class="start-module-body">
+                  <div class="start-module-why">
+                    <strong>Why it matters:</strong> Cross-border clinical trials often face conflicting legal norms on indemnity, insurance, IP, and data protection, often stalling contract finalization.
+                  </div>
+                  <div class="start-module-what">
+                    <strong>What it covers:</strong> Contractual language aligned with major international regulatory frameworks (e.g., GDPR, ICH, EMA) to support multinational trial deployment.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Implementation Plan -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">Implementation Plan</h4>
+            <div class="start-phases">
+              <div class="start-phase">
+                <span class="start-phase-label">Phase 1 (Year 1)</span>
+                <span class="start-phase-desc">Coalition building and legal analysis</span>
+              </div>
+              <div class="start-phase">
+                <span class="start-phase-label">Phase 2 (Year 2)</span>
+                <span class="start-phase-desc">Framework finalization and public introduction</span>
+              </div>
+              <div class="start-phase">
+                <span class="start-phase-label">Phase 3 (Years 3&ndash;5)</span>
+                <span class="start-phase-desc">Monitoring and formal assessment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Imperative for START 2.0 -->
+          <div class="start-section-block">
+            <h4 class="start-section-title">The Imperative for START 2.0</h4>
+            <p class="start-imperative-intro">Context from 2025 J.P. Morgan Healthcare Conference:</p>
+            <div class="start-quotes">
+              <div class="start-quote-item">
+                <blockquote>&ldquo;Our system is fragmented. Sponsors must negotiate every single trial and every single cost with every single site.&rdquo;</blockquote>
+                <div class="start-quote-attribution">
+                  <strong>Ashley Magargee</strong> <span>CEO, Genentech</span>
+                </div>
+              </div>
+              <div class="start-quote-item">
+                <blockquote>&ldquo;Accelerating every stage&mdash;from enrollment and review to approvals and access&mdash;is essential for efficiency,&rdquo; emphasizing that modern systems must be &ldquo;innovative, scalable, and operationally sound.&rdquo;</blockquote>
+                <div class="start-quote-attribution">
+                  <strong>Bob Bradway</strong> <span>Chairman &amp; CEO, Amgen; CEORT Director Emeritus</span>
+                </div>
+              </div>
+              <div class="start-quote-item">
+                <blockquote>&ldquo;Clinical trials may have strong business cases, but success depends on the infrastructure to deliver.&rdquo;</blockquote>
+                <div class="start-quote-attribution">
+                  <strong>Karen Knudsen</strong> <span>CEO, Parker Institute for Cancer Immunotherapy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Get Involved -->
+          <div class="start-get-involved">
+            <h4>Get Involved</h4>
+            <p>We invite your organization to actively contribute to the design and implementation of START Clauses 2.0. Participating organizations will help shape clause content, participate in working groups, pilot modules in live settings, and guide the evolution of a shared legal resource that reduces inefficiency and improves consistency across clinical trial operations.</p>
+            <a href="mailto:info@ceort.org" class="btn btn-primary btn-sm">Contact Us <span class="arrow">&rarr;</span></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gold Standard -->
+  <section class="section section-gray" id="gold-standard">
+    <div class="container">
+      <div class="initiative-card-modern fade-in">
+        <div class="expandable-card-banner" style="background-image: url('images/gold-standard-logo.png');"></div>
+        <div class="initiative-card-modern-content">
           <span class="overline">Workplace Wellness</span>
           <h3>CEO Cancer Gold Standard&trade;</h3>
-          <p>The Gold Standard is a workplace wellness accreditation program that offers an evidence-based framework for organizations to provide a healthier workplace. It encourages and celebrates organizations committed to reducing the risk and burden of cancer among employees, families, and communities.</p>
-          <p>The program has evolved into a dynamic journey-based model, moving beyond a static accreditation to celebrate organizations' continual commitment to health and well-being.</p>
+          <p>An evidence-based workplace wellness accreditation program that provides a framework for organizations to reduce the risk and burden of cancer among employees, families, and communities. The program has evolved into a dynamic journey-based model celebrating continual commitment to health and well-being.</p>
           <ul class="feature-list">
             <li>Evidence-based cancer risk reduction programs</li>
             <li>Screenings for early cancer detection</li>
             <li>Access to quality care, including clinical trials</li>
             <li>Continual organizational health improvement</li>
           </ul>
-          <a href="https://application.cancergoldstandard.org/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Apply for Gold Standard <span class="arrow">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Data Sphere -->
-  <section class="section section-gray" id="pds">
-    <div class="container">
-      <div class="feature-row reverse">
-        <div class="feature-image fade-in-right" style="background: linear-gradient(135deg, #e8ede5, #d5ddd0);">
-          <img src="images/pds-logo.png" alt="Project Data Sphere" class="feature-logo">
-        </div>
-        <div class="feature-content fade-in-left">
-          <span class="overline">Open Data</span>
-          <h3>Project Data Sphere&reg;</h3>
-          <p>Project Data Sphere is an independent, not-for-profit initiative focused on translating extensive clinical trial datasets into actionable insights. PDS breaks down barriers to cancer clinical trial data sharing that historically have kept valuable trial data from ultimately benefitting patients.</p>
-          <p>Operating as a subsidiary of the CEO Roundtable on Cancer's Life Sciences Consortium (LSC), PDS provides a platform where the research community can broadly share, integrate, and analyze historical, patient-level cancer data.</p>
-          <ul class="feature-list">
-            <li>252+ clinical trials shared on the platform</li>
-            <li>250,000+ de-identified patient records available</li>
-            <li>Open-access platform for researchers worldwide</li>
-            <li>Led by Jon McDunn, PhD, as President</li>
-          </ul>
-          <a href="https://www.projectdatasphere.org/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Visit Project Data Sphere <span class="arrow">&rarr;</span></a>
+          <a href="https://application.cancergoldstandard.org/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Apply for Gold Standard <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Going for Gold -->
-  <section class="section section-gray" id="going-for-gold">
+  <section class="section" id="going-for-gold">
     <div class="container">
-      <div class="feature-row reverse">
-        <div class="feature-content fade-in">
+      <div class="initiative-card-modern fade-in">
+        <div class="expandable-card-banner" style="background-image: url('images/going-for-gold.png');"></div>
+        <div class="initiative-card-modern-content">
           <span class="overline">Health Equity</span>
           <h3>Going for Gold</h3>
-          <p>The Going for Gold initiative partners Gold Standard companies with Historically Black Colleges and Universities (HBCUs) and minority-serving institutions to champion cancer prevention, diagnosis, and quality treatment in communities disproportionately affected by cancer.</p>
-          <p>With a focus on improving health equity, education, navigation, and access, Going for Gold has the capacity to impact more than 20 million lives within 7&ndash;10 years, making it one of the most ambitious health equity initiatives in the cancer space.</p>
+          <p>Partnering Gold Standard companies with Historically Black Colleges and Universities (HBCUs) and minority-serving institutions to champion cancer prevention, diagnosis, and quality treatment in communities disproportionately affected by cancer. With a capacity to impact more than 20 million lives within 7&ndash;10 years.</p>
           <ul class="feature-list">
             <li>Partnerships with HBCUs and minority-serving institutions</li>
             <li>20+ million lives targeted for impact</li>
-            <li>Connected to the White House Cancer Moonshot initiative</li>
+            <li>Connected to the White House Cancer Moonshot</li>
             <li>Focus on health equity, education, and access</li>
           </ul>
         </div>
@@ -163,8 +813,12 @@
         <div class="footer-col">
           <h4>Initiatives</h4>
           <ul>
-            <li><a href="initiatives.html#gold-standard">Gold Standard</a></li>
             <li><a href="initiatives.html#pds">Project Data Sphere</a></li>
+            <li><a href="initiatives.html#autorecist">autoRECIST</a></li>
+            <li><a href="initiatives.html#ttbi">TTBI</a></li>
+            <li><a href="initiatives.html#iraes">irAEs</a></li>
+            <li><a href="initiatives.html#start-clauses">START Clauses</a></li>
+            <li><a href="initiatives.html#gold-standard">Gold Standard</a></li>
             <li><a href="initiatives.html#going-for-gold">Going for Gold</a></li>
           </ul>
         </div>

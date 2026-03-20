@@ -7,6 +7,7 @@
     toggle.addEventListener('click', function() {
       toggle.classList.toggle('active');
       nav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
     });
 
     // Close nav when a link is clicked (mobile)
@@ -15,6 +16,7 @@
       links[i].addEventListener('click', function() {
         toggle.classList.remove('active');
         nav.classList.remove('open');
+        document.body.classList.remove('nav-open');
       });
     }
   }
@@ -118,6 +120,165 @@
       }
     });
   });
+})();
+
+// ===== Expandable LSC Panels =====
+(function() {
+  var panels = document.querySelectorAll('.lsc-panel');
+  if (!panels.length) return;
+
+  panels.forEach(function(panel) {
+    var header = panel.querySelector('.lsc-panel-header');
+
+    function toggle(e) {
+      if (e.target.closest('.lsc-panel-body a')) return;
+      panel.classList.toggle('expanded');
+    }
+
+    if (header) header.addEventListener('click', toggle);
+
+    panel.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target === panel || e.target === header || (header && header.contains(e.target))) {
+          e.preventDefault();
+          panel.classList.toggle('expanded');
+        }
+      }
+    });
+  });
+})();
+
+// ===== Expandable irAEs Card =====
+(function() {
+  var card = document.querySelector('.iraes-expandable');
+  if (!card) return;
+
+  var header = card.querySelector('.iraes-expandable-header');
+  var intro = card.querySelector('.iraes-intro');
+
+  function toggle(e) {
+    // Don't toggle if clicking a link inside the expanded body
+    if (e.target.closest('.iraes-expandable-body a')) return;
+    card.classList.toggle('expanded');
+  }
+
+  if (header) header.addEventListener('click', toggle);
+  if (intro) intro.addEventListener('click', toggle);
+
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === card || e.target === header || header.contains(e.target)) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
+    }
+  });
+
+  // Auto-expand if navigated to via #iraes hash
+  if (window.location.hash === '#iraes') {
+    setTimeout(function() {
+      card.classList.add('expanded');
+    }, 400);
+  }
+})();
+
+// ===== Expandable START Clauses Card =====
+(function() {
+  var card = document.querySelector('.start-expandable');
+  if (!card) return;
+
+  var header = card.querySelector('.start-expandable-header');
+  var intro = card.querySelector('.start-intro');
+
+  function toggleCard(e) {
+    if (e.target.closest('.start-expandable-body a')) return;
+    if (e.target.closest('.start-module-header')) return;
+    if (e.target.closest('.start-expandable-body') && card.classList.contains('expanded')) return;
+    card.classList.toggle('expanded');
+  }
+
+  if (header) header.addEventListener('click', toggleCard);
+  if (intro) intro.addEventListener('click', toggleCard);
+
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === card || e.target === header || header.contains(e.target)) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
+    }
+  });
+
+  // Auto-expand if navigated to via #start-clauses hash
+  if (window.location.hash === '#start-clauses') {
+    setTimeout(function() {
+      card.classList.add('expanded');
+    }, 400);
+  }
+
+  // Accordion modules within START Clauses
+  var modules = card.querySelectorAll('.start-module');
+  modules.forEach(function(mod) {
+    var btn = mod.querySelector('.start-module-header');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wasExpanded = mod.classList.contains('expanded');
+      // Close all modules
+      modules.forEach(function(m) { m.classList.remove('expanded'); });
+      // Toggle clicked module
+      if (!wasExpanded) {
+        mod.classList.add('expanded');
+      }
+      // Update aria-expanded
+      modules.forEach(function(m) {
+        var b = m.querySelector('.start-module-header');
+        if (b) b.setAttribute('aria-expanded', m.classList.contains('expanded'));
+      });
+    });
+  });
+})();
+
+// ===== Expandable Annual Meeting Card =====
+(function() {
+  var card = document.querySelector('.am-expandable');
+  if (!card) return;
+
+  var header = card.querySelector('.am-card-header');
+
+  function toggleCard(e) {
+    // Don't toggle if clicking a link inside the expanded body
+    if (e.target.closest('.am-expandable-body a')) return;
+    // Don't toggle if clicking inside expanded body (except on header)
+    if (e.target.closest('.am-expandable-body') && card.classList.contains('expanded')) return;
+    card.classList.toggle('expanded');
+  }
+
+  // Toggle on header click
+  if (header) header.addEventListener('click', toggleCard);
+
+  // Toggle on banner click
+  var banner = card.querySelector('.am-banner');
+  if (banner) banner.addEventListener('click', toggleCard);
+
+  // Keyboard accessibility
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target === card || e.target === header || (header && header.contains(e.target))) {
+        e.preventDefault();
+        card.classList.toggle('expanded');
+      }
+    }
+  });
+
+  // Auto-expand if navigated to via hash
+  if (window.location.hash === '#annual-meeting-2025') {
+    setTimeout(function() {
+      card.classList.add('expanded');
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
+  }
 })();
 
 // ===== Smooth Scroll for Hash Links =====
