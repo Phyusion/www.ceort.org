@@ -122,6 +122,32 @@
   });
 })();
 
+// ===== Expandable LSC Panels =====
+(function() {
+  var panels = document.querySelectorAll('.lsc-panel');
+  if (!panels.length) return;
+
+  panels.forEach(function(panel) {
+    var header = panel.querySelector('.lsc-panel-header');
+
+    function toggle(e) {
+      if (e.target.closest('.lsc-panel-body a')) return;
+      panel.classList.toggle('expanded');
+    }
+
+    if (header) header.addEventListener('click', toggle);
+
+    panel.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target === panel || e.target === header || (header && header.contains(e.target))) {
+          e.preventDefault();
+          panel.classList.toggle('expanded');
+        }
+      }
+    });
+  });
+})();
+
 // ===== Expandable irAEs Card =====
 (function() {
   var card = document.querySelector('.iraes-expandable');

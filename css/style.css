@@ -1871,22 +1871,126 @@ body.nav-open {
 }
 
 /* ===== Life Sciences Council Sections ===== */
-.lsc-overview {
-  margin-bottom: 28px;
-  max-width: 800px;
+
+/* Expandable Panels */
+.lsc-panel {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-.lsc-overview p {
-  font-size: 0.9rem;
+.lsc-panel:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(201, 168, 76, 0.18);
+}
+
+.lsc-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lsc-panel-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.lsc-panel-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.lsc-panel-teaser {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.lsc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.lsc-panel-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mid-gray);
+  transition: all var(--transition);
+  margin-top: 2px;
+}
+
+.lsc-panel:hover .lsc-panel-toggle {
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.lsc-panel.expanded .lsc-panel-toggle {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.lsc-panel-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease, margin 0.35s ease;
+  margin-top: 0;
+}
+
+.lsc-panel.expanded .lsc-panel-body {
+  max-height: 800px;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+.lsc-panel.expanded {
+  border-color: rgba(201, 168, 76, 0.15);
+}
+
+/* Overview panel body */
+.lsc-panel-overview .lsc-panel-body p {
+  font-size: 0.87rem;
   color: var(--color-text-light);
   line-height: 1.7;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.lsc-overview p:last-child {
+.lsc-panel-overview .lsc-panel-body p:last-child {
   margin-bottom: 0;
 }
 
+/* Subsection titles */
 .lsc-subsection-title {
   font-size: 0.95rem;
   font-weight: 700;
@@ -1895,15 +1999,14 @@ body.nav-open {
   letter-spacing: -0.01em;
 }
 
-.lsc-accomplishments ul,
-.lsc-alumni ul {
+/* Accomplishments */
+.lsc-accomplishments ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.lsc-accomplishments li,
-.lsc-alumni li {
+.lsc-accomplishments li {
   font-size: 0.85rem;
   color: var(--color-text-light);
   line-height: 1.6;
@@ -1912,13 +2015,11 @@ body.nav-open {
   border-bottom: 1px solid rgba(28, 25, 23, 0.06);
 }
 
-.lsc-accomplishments li:last-child,
-.lsc-alumni li:last-child {
+.lsc-accomplishments li:last-child {
   border-bottom: none;
 }
 
-.lsc-accomplishments li::before,
-.lsc-alumni li::before {
+.lsc-accomplishments li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1933,9 +2034,52 @@ body.nav-open {
   color: var(--color-text);
 }
 
-.lsc-alumni strong {
-  color: var(--color-text);
+/* Alumni panel */
+.lsc-alumni-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lsc-alumni-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.05);
+  flex-wrap: wrap;
+}
+
+.lsc-alumni-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.lsc-alumni-item:first-child {
+  padding-top: 0;
+}
+
+.lsc-alumni-name {
+  font-size: 0.87rem;
   font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.lsc-alumni-role {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .lsc-panel {
+    padding: 16px 18px;
+  }
+  .lsc-alumni-item {
+    flex-direction: column;
+    gap: 2px;
+  }
 }
 
 /* ===== Senior Leadership Cards ===== */
