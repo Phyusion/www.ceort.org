@@ -129,17 +129,15 @@
 
   panels.forEach(function(panel) {
     var header = panel.querySelector('.lsc-panel-header');
+    if (!header) return;
 
-    function toggle(e) {
-      if (e.target.closest('.lsc-panel-body a')) return;
+    header.addEventListener('click', function(e) {
       panel.classList.toggle('expanded');
-    }
-
-    if (header) header.addEventListener('click', toggle);
+    });
 
     panel.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target === panel || e.target === header || (header && header.contains(e.target))) {
+        if (e.target === panel || e.target === header || header.contains(e.target)) {
           e.preventDefault();
           panel.classList.toggle('expanded');
         }
