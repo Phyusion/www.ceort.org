@@ -1990,7 +1990,11 @@ body.nav-open {
   margin-bottom: 0;
 }
 
-/* Subsection titles */
+/* Accomplishments panel needs top margin after people-grid */
+.lsc-panel-accomplishments {
+  margin-top: 40px;
+}
+
 /* Accomplishments */
 .lsc-accomplishments ul {
   list-style: none;
