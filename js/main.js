@@ -76,24 +76,25 @@
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var btn = form.querySelector('button[type="submit"]');
-    var originalText = btn.innerHTML;
+    var firstName = form.querySelector('#firstName').value;
+    var lastName = form.querySelector('#lastName').value;
+    var email = form.querySelector('#email').value;
+    var organization = form.querySelector('#organization').value;
+    var subject = form.querySelector('#subject');
+    var subjectText = subject.options[subject.selectedIndex].text;
+    if (subject.value === '') subjectText = 'Website Inquiry';
+    var message = form.querySelector('#message').value;
 
-    btn.innerHTML = 'Sending...';
-    btn.disabled = true;
+    var body = 'From: ' + firstName + ' ' + lastName + '\n'
+      + 'Email: ' + email + '\n'
+      + (organization ? 'Organization: ' + organization + '\n' : '')
+      + '\n' + message;
 
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(function() {
-      btn.innerHTML = 'Message Sent!';
-      btn.style.background = 'var(--color-sage)';
+    var mailtoLink = 'mailto:sean.khozin@ceort.org'
+      + '?subject=' + encodeURIComponent(subjectText)
+      + '&body=' + encodeURIComponent(body);
 
-      setTimeout(function() {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        form.reset();
-      }, 2500);
-    }, 1000);
+    window.location.href = mailtoLink;
   });
 })();
 
