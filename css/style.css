@@ -793,6 +793,7 @@ ul, ol {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: start;
+  text-align: left;
 }
 
 .member-card {
@@ -802,11 +803,11 @@ ul, ol {
   background: white;
   border-radius: var(--radius-md);
   border: 1px solid rgba(28, 25, 23, 0.06);
-  transition: all var(--transition);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
   font-size: 0.92rem;
   color: var(--color-text);
   cursor: pointer;
-  overflow: hidden;
+  text-align: left;
 }
 
 .member-card:hover {
@@ -835,7 +836,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   color: var(--color-mid-gray);
-  transition: all var(--transition);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .member-card:hover .member-expand-icon {
@@ -853,17 +854,12 @@ ul, ol {
 }
 
 .member-card-desc {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
-  margin-top: 0;
+  display: none;
+  margin-top: 14px;
 }
 
 .member-card.expanded .member-card-desc {
-  max-height: 300px;
-  opacity: 1;
-  margin-top: 14px;
+  display: block;
 }
 
 .member-card-desc p {
@@ -872,6 +868,8 @@ ul, ol {
   color: var(--color-text-light);
   padding-top: 14px;
   border-top: 1px solid rgba(28, 25, 23, 0.06);
+  text-align: left;
+  margin: 0;
 }
 
 /* ===== Leadership Grid ===== */
