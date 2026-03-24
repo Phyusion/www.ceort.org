@@ -790,30 +790,88 @@ ul, ol {
 /* ===== Members Grid ===== */
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
 .member-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px 20px;
+  flex-direction: column;
+  padding: 24px 20px;
   background: white;
   border-radius: var(--radius-md);
   border: 1px solid rgba(28, 25, 23, 0.06);
   transition: all var(--transition);
-  font-weight: 600;
   font-size: 0.92rem;
   color: var(--color-text);
-  text-align: center;
-  min-height: 80px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .member-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
   border-color: var(--color-accent);
+}
+
+.member-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.member-card-name {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.member-expand-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mid-gray);
+  transition: all var(--transition);
+}
+
+.member-card:hover .member-expand-icon {
+  color: var(--color-accent);
+}
+
+.member-card.expanded .member-expand-icon {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+
+.member-card.expanded {
+  border-color: rgba(201, 168, 76, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.member-card-desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.member-card.expanded .member-card-desc {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.member-card-desc p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-text-light);
+  padding-top: 14px;
+  border-top: 1px solid rgba(28, 25, 23, 0.06);
 }
 
 /* ===== Leadership Grid ===== */
@@ -1688,6 +1746,10 @@ body.nav-open {
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .member-card {
+    padding: 20px 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1702,6 +1764,10 @@ body.nav-open {
 
   .members-grid {
     grid-template-columns: 1fr;
+  }
+
+  .member-card-name {
+    font-size: 0.88rem;
   }
 }
 
