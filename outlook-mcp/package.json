@@ -1,0 +1,33 @@
+{
+  "name": "outlook-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server providing full read/write access to Outlook email and calendar via Microsoft Graph.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "outlook-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.16.2",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "isomorphic-fetch": "^3.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
