@@ -996,6 +996,17 @@ ul, ol {
   gap: 6px;
 }
 
+.event-details p.event-note {
+  margin-top: 16px;
+  font-size: 0.86rem;
+  color: var(--color-text-light);
+}
+
+.event-note a {
+  color: var(--color-primary);
+  font-weight: 550;
+}
+
 /* Event Photo Banner */
 .event-photo-banner {
   border-radius: var(--radius-lg);
