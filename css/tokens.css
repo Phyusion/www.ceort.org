@@ -1,0 +1,227 @@
+/* ==========================================================================
+   CEO Roundtable on Cancer — design tokens
+   Source of truth: CEORT / Project Data Sphere design system handoff.
+   Values are verbatim from the handoff `tokens/` files. Do not hard-code a
+   hex or a px value that a token already covers; prefer the semantic aliases
+   (--text-muted, --surface-alt, --border-hairline) over the base ramps.
+   ========================================================================== */
+
+/* --- Webfonts -------------------------------------------------------------
+   Substitutions, flagged in the handoff: no vendor binaries were supplied.
+   Cinzel ~ the Trajan-style caps of the CEORT mark; Cormorant Garamond ~ the
+   editorial display serif; Jost ~ the geometric sans of the PDS wordmark;
+   IBM Plex Mono ~ tabular/technical values. Swap for licensed faces if the
+   organization owns them. */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ── Colour — ink neutrals (cool, navy-shifted) ─────────────────────── */
+  --ink-900: #14141F;
+  --ink-800: #1A1A2E; /* declared theme colour */
+  --ink-700: #262639;
+  --ink-600: #3D3D52;
+  --ink-500: #5C5C70;
+  --ink-400: #8A8A99;
+  --ink-300: #B9B9C2;
+  --ink-200: #D9D9DF;
+  --ink-100: #ECECF0;
+  --ink-50:  #F6F6F8;
+  --white:   #FFFFFF;
+
+  /* ── Colour — Project Data Sphere blue ──────────────────────────────── */
+  --pds-blue-800: #2C4A73;
+  --pds-blue-700: #3E6394;
+  --pds-blue-600: #5B82BC;
+  --pds-blue-500: #7090C0;
+  --pds-blue-400: #8FA9D0;
+  --pds-blue-300: #A8C0DF;
+  --pds-blue-200: #CBDAEC;
+  --pds-blue-100: #E4EBF5;
+
+  /* ── Colour — CEO Roundtable gold ───────────────────────────────────── */
+  --gold-800: #6E611F;
+  --gold-700: #8A7A28;
+  --gold-600: #A6922F;
+  --gold-500: #C0B040;
+  --gold-400: #CEC163;
+  --gold-300: #D9CC85;
+  --gold-200: #E9E1B6;
+  --gold-100: #F3EFDC;
+
+  /* ── Colour — sphere accents (woven globe in the PDS mark) ──────────── */
+  --sphere-lime:  #C0C040;
+  --sphere-green: #8FB870;
+  --sphere-teal:  #70B080;
+  --sphere-aqua:  #70A090;
+
+  /* ── Colour — semantic status (desaturated; never pure red/green) ───── */
+  --green-600: #3F7D5A;
+  --green-100: #E6EFE9;
+  --amber-600: #B4832A;
+  --amber-100: #F7EEDB;
+  --red-600:   #A33A32;
+  --red-100:   #F6E7E5;
+
+  /* ── Semantic aliases ───────────────────────────────────────────────── */
+  --brand-navy: var(--ink-800);
+  --brand-gold: var(--gold-500);
+  --brand-blue: var(--pds-blue-500);
+
+  --text-heading:   var(--ink-900);
+  --text-heading-1: var(--ink-900);
+  --text-heading-2: var(--ink-800);
+  --text-heading-3: var(--ink-700);
+  --text-heading-4: var(--ink-600);
+  --text-body:   var(--ink-700);
+  --text-muted:  var(--ink-500);
+  --text-subtle: var(--ink-400);
+  --text-inverse: var(--white);
+  --text-inverse-muted: rgba(255, 255, 255, .66);
+  --text-inverse-subtle: rgba(255, 255, 255, .62);
+  --text-accent: var(--gold-700);
+  --text-link: var(--pds-blue-700);
+  --text-link-hover: var(--ink-800);
+
+  --surface-page:        var(--white);
+  --surface-alt:         var(--ink-50);
+  --surface-card:        var(--white);
+  --surface-sunken:      var(--ink-100);
+  --surface-inverse:     var(--ink-800);
+  --surface-inverse-alt: var(--ink-900);
+  --surface-accent-soft: var(--gold-100);
+  --surface-blue-soft:   var(--pds-blue-100);
+  --surface-overlay:     rgba(20, 20, 31, .62);
+
+  --border-hairline: var(--ink-200);
+  --border-default:  var(--ink-300);
+  --border-strong:   var(--ink-600);
+  --border-inverse:  rgba(255, 255, 255, .18);
+  --border-accent:   var(--gold-500);
+
+  --focus-ring: var(--pds-blue-600);
+
+  --gradient-sphere: linear-gradient(90deg, var(--pds-blue-600) 0%, var(--sphere-teal) 42%, var(--sphere-green) 70%, var(--sphere-lime) 100%);
+  --gradient-navy: linear-gradient(180deg, var(--ink-800) 0%, var(--ink-900) 100%);
+  --gradient-gold-rule: linear-gradient(90deg, var(--gold-500) 0%, rgba(192, 176, 64, 0) 100%);
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-caps: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --text-display-1: 76px;
+  --text-display-2: 56px;
+  --text-display-3: 42px;
+  --text-h1: 34px;
+  --text-h2: 27px;
+  --text-h3: 21px;
+  --text-h4: 18px;
+  --text-lead: 20px;
+  --text-body-lg: 17px;
+  --text-body-size: 15px;
+  --text-sm: 13px;
+  --text-xs: 11px;
+  --text-eyebrow: 12px;
+
+  --leading-display: 1.06;
+  --leading-tight: 1.18;
+  --leading-heading: 1.28;
+  --leading-body: 1.65;
+  --leading-loose: 1.8;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --tracking-display: -0.015em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-caps: 0.14em;
+  --tracking-caps-loose: 0.22em;
+
+  --type-display: var(--weight-light) var(--text-display-2)/var(--leading-display) var(--font-display);
+  --type-h1: var(--weight-regular) var(--text-h1)/var(--leading-tight) var(--font-display);
+  --type-h2: var(--weight-regular) var(--text-h2)/var(--leading-heading) var(--font-display);
+  --type-h3: var(--weight-medium) var(--text-h3)/var(--leading-heading) var(--font-display);
+  --type-h4: var(--weight-medium) var(--text-h4)/var(--leading-heading) var(--font-display);
+  --type-body: var(--weight-regular) var(--text-body-size)/var(--leading-body) var(--font-sans);
+  --type-lead: var(--weight-light) var(--text-lead)/var(--leading-body) var(--font-sans);
+  --type-label: var(--weight-medium) var(--text-sm)/1.3 var(--font-sans);
+  --type-mono: var(--weight-regular) var(--text-sm)/1.4 var(--font-mono);
+
+  /* ── Space and layout (4px grid) ────────────────────────────────────── */
+  --space-0: 0;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 64px;
+  --space-12: 80px;
+  --space-13: 96px;
+  --space-14: 128px;
+
+  --section-y: 96px;
+  --section-y-lg: 128px;
+  --section-y-sm: 64px;
+
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --container-wide: 1400px;
+  --gutter: 24px;
+  --gutter-lg: 40px;
+  --header-h: 78px;
+
+  /* ── Radii and borders — deliberately small ─────────────────────────── */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+
+  --border-w: 1px;
+  --border-w-thick: 2px;
+  --rule-accent-w: 3px;
+
+  /* ── Elevation — cool, low-opacity, app/hover/dialog only ───────────── */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(20, 20, 31, .05);
+  --shadow-sm: 0 1px 3px rgba(20, 20, 31, .07), 0 1px 1px rgba(20, 20, 31, .04);
+  --shadow-md: 0 4px 12px rgba(20, 20, 31, .08), 0 1px 2px rgba(20, 20, 31, .05);
+  --shadow-lg: 0 12px 32px rgba(20, 20, 31, .12), 0 2px 6px rgba(20, 20, 31, .06);
+  --shadow-xl: 0 28px 64px rgba(20, 20, 31, .18);
+  --shadow-inset-hairline: inset 0 0 0 1px rgba(20, 20, 31, .06);
+
+  --ring-focus: 0 0 0 2px var(--white), 0 0 0 4px var(--pds-blue-500);
+  --ring-focus-inverse: 0 0 0 2px var(--ink-900), 0 0 0 4px var(--pds-blue-400);
+
+  --scrim-bottom: linear-gradient(180deg, rgba(20, 20, 31, 0) 0%, rgba(20, 20, 31, .55) 55%, rgba(20, 20, 31, .86) 100%);
+  --scrim-left: linear-gradient(90deg, rgba(20, 20, 31, .88) 0%, rgba(20, 20, 31, .45) 55%, rgba(20, 20, 31, 0) 100%);
+
+  --blur-nav: saturate(140%) blur(12px);
+
+  /* ── Motion — restrained and short ──────────────────────────────────── */
+  --duration-instant: 80ms;
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 400ms;
+  --duration-reveal: 640ms;
+
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --ease-out: cubic-bezier(.16, .84, .44, 1);
+  --ease-in: cubic-bezier(.5, 0, 1, 1);
+
+  --transition-color: color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+  --transition-subtle: all var(--duration-base) var(--ease-out);
+
+  --reveal-distance: 16px;
+}

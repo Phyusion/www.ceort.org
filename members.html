@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://www.ceort.org/images/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -61,11 +61,13 @@
         <a href="members.html" class="active">Members</a>
         <a href="events.html">Events</a>
         <a href="news.html">News</a>
-        <a href="donate.html">Donate</a>
-        <a href="members-only.html" class="nav-portal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Member Portal</a>
-        <a href="contact.html" class="nav-cta">Get Involved</a>
+        <a href="members-only.html" class="nav-portal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Member Portal</a>
+        <span class="nav-actions">
+          <a href="donate.html" class="btn btn-gold btn-sm">Donate</a>
+          <a href="contact.html" class="btn btn-secondary btn-sm">Get Involved <span class="arrow">&rarr;</span></a>
+        </span>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -94,252 +96,252 @@
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">AbbVie</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global research-based biopharmaceutical company with a robust oncology portfolio spanning hematologic malignancies and solid tumors, including therapies for chronic lymphocytic leukemia, acute myeloid leukemia, and multiple myeloma.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Alphanumeric</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>Alphanumeric connects HCPs, patients, caregivers, and consumers through innovative, compliant communications across the healthcare journey. We deliver end&#8209;to&#8209;end lifecycle support&mdash;from strategy to execution&mdash;spanning scientific and medical communications, KOL and patient engagement, global contact centers, facilities expansion, pharmacovigilance, and regulatory support&mdash;driving clarity, insight, and innovation with collaborative expertise and advanced technology.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Amgen</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A leading global biotechnology company with a significant oncology portfolio, including treatments for blood cancers and solid tumors. Amgen's Chairman and CEO Robert Bradway served as CEORT chairman from 2015 to 2022.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Astellas Pharmaceutical</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A Japanese multinational pharmaceutical company with a growing oncology focus, including targeted therapies and antibody-drug conjugates for advanced cancers.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">AstraZeneca</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global biopharmaceutical company with one of the industry's largest oncology pipelines, spanning lung, breast, ovarian, and blood cancers.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">B&amp;C International</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global business management and consulting firm that supports CEORT's "Going for Gold" health equity initiative, advancing cancer awareness and prevention at HBCUs and minority-serving institutions.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Bayer AG</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A German multinational life sciences company with a pharmaceuticals division focused on oncology, including targeted cancer therapies and radiopharmaceuticals.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Boehringer Ingelheim GmbH</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global, family-owned pharmaceutical company with an oncology research portfolio focused on innovative cancer treatments, including lung cancer therapies.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Boston Scientific</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global medical device company that manufactures interventional oncology products used in minimally invasive cancer treatments, including tumor ablation and embolization devices.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Brand Institute</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global strategic branding consultancy specializing in pharmaceutical, biotech, and healthcare brand name development, including naming for oncology drugs.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Bristol Myers Squibb</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A major global pharmaceutical company and leader in immuno-oncology, known for breakthrough cancer immunotherapies including checkpoint inhibitors for melanoma, lung cancer, and other malignancies.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Daiichi Sankyo</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A Japanese multinational pharmaceutical company with a rapidly growing oncology portfolio, particularly known for pioneering antibody-drug conjugate technology for cancer treatment.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Eli Lilly and Company</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A major global pharmaceutical company with significant oncology investments, including therapies for breast cancer, lung cancer, and other solid tumors.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">EMD Serono</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>The U.S. biopharmaceutical business of Merck KGaA, focused on oncology and immuno-oncology therapies including treatments for advanced cancers.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Evercore</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A leading independent investment banking advisory firm that provides strategic advisory services to healthcare and life sciences companies in M&amp;A and capital markets.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Foundation Medicine</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A molecular diagnostics company and pioneer in comprehensive genomic profiling for cancer, helping oncologists match patients with targeted therapies and clinical trials.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">GSK plc</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global biopharma company with a significant oncology portfolio, including treatments for blood cancers and solid tumors, and investments in immuno-oncology and cell therapy.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Hatteras Venture Partners</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A venture capital firm based in Durham, NC, focused on early-stage investments in life sciences, including oncology therapeutics and diagnostics companies.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Helsinn Healthcare SA</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A Swiss pharmaceutical group focused on cancer supportive care, developing treatments that improve quality of life for cancer patients, particularly managing chemotherapy-related side effects.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">IQVIA Holdings</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A leading global provider of clinical research services, healthcare analytics, and technology solutions that support oncology drug development and real-world evidence generation.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Johnson &amp; Johnson Innovative Medicine</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>The pharmaceutical arm of Johnson &amp; Johnson with a major oncology portfolio spanning treatments for multiple myeloma, prostate cancer, lung cancer, and bladder cancer.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Medable</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A clinical trial technology company providing decentralized and hybrid trial platforms deployed across nearly 400 trials in 70 countries, helping accelerate oncology and other clinical research.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Menarini Group</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>An Italian pharmaceutical and diagnostics company with a growing oncology presence, developing targeted cancer therapies through its subsidiary Stemline Therapeutics.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Merck &amp; Co.</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A major global pharmaceutical company and leader in immuno-oncology through its blockbuster PD-1 inhibitor Keytruda, one of the most widely used cancer immunotherapies worldwide.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Merck KGaA</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A German science and technology company with a healthcare division that develops oncology treatments, including targeted therapies and immuno-oncology agents. Operates as EMD Serono in the U.S.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Novartis AG</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global pharmaceutical leader with a major oncology franchise spanning targeted therapies, radioligand therapy, and CAR-T cell therapy, making it one of the largest oncology drug developers worldwide.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Optum</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A UnitedHealth Group company providing data analytics, pharmacy care services, and population health management, including oncology care management programs and real-world data for cancer research.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Outcomes4Me</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>An AI-driven patient empowerment platform that helps cancer patients navigate their care from diagnosis through treatment, providing personalized, evidence-based information including clinical trial matching.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Pfizer</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global pharmaceutical company with a substantial oncology portfolio, including treatments for breast cancer, prostate cancer, and blood cancers, and expanding into antibody-drug conjugates.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Qure.ai</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A medical imaging AI company deployed in 3,100+ hospitals across 90+ countries, using deep learning to improve early detection and diagnosis of conditions including lung cancer.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Roche Holding AG</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>One of the world's largest oncology companies, pioneering targeted cancer therapies and diagnostics through its pharmaceutical division and subsidiary Genentech.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">RTI International</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>An independent, nonprofit research institute conducting research in cancer epidemiology, clinical trial methodology, and health equity to support evidence-based cancer prevention and treatment.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Sanofi S.A.</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global pharmaceutical company expanding its oncology portfolio through immunology-based cancer treatments and precision medicine approaches, including bispecific antibodies and antibody-drug conjugates.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">SAS Institute</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global leader in data analytics and AI, SAS provides the advanced analytical and visual analysis tools embedded directly within the Project Data Sphere platform, giving cancer researchers free access to run complex models and uncover insights without needing to export data or purchase expensive software.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">Takeda Pharmaceutical Company Limited</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>A global biopharmaceutical company with a significant oncology franchise focused on hematologic malignancies, including multiple myeloma and lymphoma, as well as lung and gastrointestinal cancers.</p></div>
         </div>
         <div class="member-card" tabindex="0">
           <div class="member-card-header">
             <span class="member-card-name">The University of Texas MD Anderson Cancer Center</span>
-            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+            <span class="member-expand-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
           <div class="member-card-desc"><p>One of the world's foremost academic cancer centers, consistently ranked #1 for cancer care in the U.S., conducting pioneering research in cancer treatment, prevention, and education.</p></div>
         </div>
@@ -365,7 +367,7 @@
           <a href="contact.html" class="btn btn-primary btn-sm">Apply for Membership <span class="arrow">&rarr;</span></a>
         </div>
         <div class="feature-image fade-in-right">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--ink-700)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
       </div>
     </div>
