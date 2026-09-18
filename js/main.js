@@ -8,6 +8,7 @@
       toggle.classList.toggle('active');
       nav.classList.toggle('open');
       document.body.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
     });
 
     // Close nav when a link is clicked (mobile)
@@ -17,6 +18,7 @@
         toggle.classList.remove('active');
         nav.classList.remove('open');
         document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     }
   }
