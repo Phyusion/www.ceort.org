@@ -1,6 +1,7 @@
 # Password-protected pages
 
-`members-only.html` is a password-protected page. GitHub Pages cannot check a
+`members-only.html` (the Member Portal) and `signal-report-q3-2026.html` (The
+Signal Report, Issue 01) are password-protected pages. GitHub Pages cannot check a
 password on the server, so the page's content is **encrypted** instead
 (AES-256-GCM, key derived from the password with PBKDF2-SHA256). Only the
 encrypted blob is committed; the browser decrypts it after the visitor enters
@@ -34,12 +35,26 @@ variable instead of typing it, which is handy for scripted updates:
 
     PAGE_PASSWORD='...' node tools/protect-page.js encrypt tools/private/members-only.content.html members-only.html
 
+## The Signal Report
+
+The report's source is `tools/private/signal-report-q3-2026.content.html`: its
+scoped stylesheet, the article markup, and the chart script, all in one
+fragment. Re-encrypt it with the portal's key so one password unlocks both
+pages in the same browser tab:
+
+    node tools/protect-page.js encrypt tools/private/signal-report-q3-2026.content.html signal-report-q3-2026.html --key-from members-only.html
+
+If you change the portal password, re-encrypt the portal first and then every
+page that shares its key, in that order.
+
 ## Adding another protected page
 
-Copy `members-only.html` to a new file, keep the empty
+Copy `signal-report-q3-2026.html` to a new file, keep the empty
 `<script type="application/json" id="protected-payload"></script>` element and
 the two script tags at the bottom, write the page's content to a new file in
-`tools/private/`, and run the `encrypt` command against the new pair.
+`tools/private/`, and run the `encrypt` command against the new pair with
+`--key-from members-only.html`. Add the new issue to the list in
+`tools/private/members-only.content.html` and re-encrypt the portal too.
 
 ## Limits to keep in mind
 
