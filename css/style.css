@@ -4421,3 +4421,72 @@ body.nav-open {
     font-size: 0.75rem;
   }
 }
+
+/* ===== Password-Protected Page ===== */
+.unlock-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 44px 36px;
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.unlock-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.14);
+  color: var(--color-accent-hover);
+  margin-bottom: 18px;
+}
+
+.unlock-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.unlock-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.unlock-form {
+  text-align: left;
+}
+
+.unlock-form .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.unlock-form .btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.unlock-error {
+  color: #a93c2f;
+  background: rgba(169, 60, 47, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin-bottom: 16px !important;
+}
+
+.lock-bar {
+  text-align: right;
+  padding-bottom: 40px;
+}
+
+body:not(.protected-unlocked) .lock-bar {
+  display: none;
+}

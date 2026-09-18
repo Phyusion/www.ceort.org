@@ -1,0 +1,3 @@
+# Unencrypted source content for password-protected pages. Never commit this
+# folder: everything in the repository is served publicly by GitHub Pages.
+tools/private/
