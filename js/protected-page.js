@@ -97,6 +97,18 @@
     // Animate any fade-in blocks inside the revealed content.
     var blocks = content.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
     for (var i = 0; i < blocks.length; i++) blocks[i].classList.add('visible');
+    // Scripts inserted via innerHTML do not run; re-create them so interactive
+    // content (charts, filters) initialises. Runs after the content is visible
+    // so layout measurements are correct.
+    var scripts = content.querySelectorAll('script');
+    for (var j = 0; j < scripts.length; j++) {
+      var s = document.createElement('script');
+      for (var k = 0; k < scripts[j].attributes.length; k++) {
+        s.setAttribute(scripts[j].attributes[k].name, scripts[j].attributes[k].value);
+      }
+      s.textContent = scripts[j].textContent;
+      scripts[j].parentNode.replaceChild(s, scripts[j]);
+    }
   }
 
   function remember(key) {

@@ -4490,3 +4490,192 @@ body.nav-open {
 body:not(.protected-unlocked) .lock-bar {
   display: none;
 }
+
+/* ===== Member Portal nav link ===== */
+.nav-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 10px;
+  padding: 8px 16px 8px 13px !important;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 50px !important;
+  background: rgba(201, 168, 76, 0.10);
+  color: var(--color-primary-dark) !important;
+  font-weight: 600 !important;
+  font-size: 0.84rem !important;
+  letter-spacing: 0.01em;
+}
+
+.nav-portal svg {
+  flex-shrink: 0;
+  color: var(--color-accent-hover);
+  transition: color var(--transition);
+}
+
+.nav-portal:hover,
+.nav-portal.active {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent);
+  color: var(--color-primary-dark) !important;
+}
+
+.nav-portal:hover svg,
+.nav-portal.active svg {
+  color: var(--color-primary-dark);
+}
+
+.nav-portal.active::after {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .nav-portal {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ===== Member Portal content ===== */
+.portal-intro {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.portal-intro .overline {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent-hover);
+  margin-bottom: 10px;
+}
+
+.portal-intro h2 {
+  margin-bottom: 14px;
+}
+
+.portal-lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.portal-intro p {
+  color: var(--color-text-light);
+}
+
+.issue-list {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.issue-card {
+  display: block;
+  padding: 32px 36px;
+  background: white;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  border-top: 3px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  transition: all var(--transition);
+}
+
+.issue-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  color: inherit;
+}
+
+.issue-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.issue-no {
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+}
+
+.issue-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.issue-card p {
+  color: var(--color-text-light);
+  font-size: 0.97rem;
+  max-width: 72ch;
+  margin-bottom: 18px;
+}
+
+.issue-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.issue-tags span {
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 50px;
+  background: var(--color-off-white);
+  color: var(--color-text-light);
+}
+
+.issue-tags .focus {
+  background: rgba(201, 168, 76, 0.16);
+  color: var(--color-primary-dark);
+}
+
+.issue-card .card-link {
+  display: inline-flex;
+}
+
+.portal-note {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  max-width: 72ch;
+}
+
+/* Report page hero */
+.hero-back {
+  margin-top: 10px;
+  font-size: 0.88rem !important;
+}
+
+.hero-back a {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.hero-back a:hover {
+  color: var(--color-accent-light) !important;
+}
+
+.report-page #protectedContent {
+  background: var(--color-cream);
+}
+
+@media (max-width: 640px) {
+  .issue-card {
+    padding: 24px 22px;
+  }
+}

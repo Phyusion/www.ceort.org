@@ -7,8 +7,11 @@
  * decrypts the content with AES-256-GCM. Nothing readable is ever committed.
  *
  * Usage:
- *   node tools/protect-page.js encrypt <content.html> <page.html>
+ *   node tools/protect-page.js encrypt <content.html> <page.html> [--key-from <other-page.html>]
  *   node tools/protect-page.js decrypt <page.html> <content.html>
+ *
+ * --key-from reuses the salt of an already-encrypted page, so that (with the
+ * same password) unlocking either page in a browser tab also unlocks the other.
  *
  * The password is read from the PAGE_PASSWORD environment variable, or
  * prompted for interactively (input hidden) when that variable is unset.
@@ -27,7 +30,7 @@ const PAYLOAD_RE = /(<script type="application\/json" id="protected-payload">)([
 
 function usage(message) {
   if (message) console.error('Error: ' + message + '\n');
-  console.error('Usage:\n  node tools/protect-page.js encrypt <content.html> <page.html>\n  node tools/protect-page.js decrypt <page.html> <content.html>');
+  console.error('Usage:\n  node tools/protect-page.js encrypt <content.html> <page.html> [--key-from <other-page.html>]\n  node tools/protect-page.js decrypt <page.html> <content.html>');
   process.exit(1);
 }
 
@@ -53,8 +56,8 @@ function deriveKey(password, salt) {
   return crypto.pbkdf2Sync(Buffer.from(password, 'utf8'), salt, KDF_ITERATIONS, 32, 'sha256');
 }
 
-function encrypt(plaintext, password) {
-  const salt = crypto.randomBytes(16);
+function encrypt(plaintext, password, salt) {
+  salt = salt || crypto.randomBytes(16);
   const iv = crypto.randomBytes(12);
   const key = deriveKey(password, salt);
   const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
@@ -83,7 +86,15 @@ function decrypt(payload, password) {
 }
 
 async function main() {
-  const [command, input, output] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  let keyFrom = null;
+  const flag = args.indexOf('--key-from');
+  if (flag !== -1) {
+    keyFrom = args[flag + 1];
+    if (!keyFrom) usage('--key-from needs a page file');
+    args.splice(flag, 2);
+  }
+  const [command, input, output] = args;
   if (!command || !input || !output) usage();
 
   if (command === 'encrypt') {
@@ -99,8 +110,16 @@ async function main() {
       if (confirm !== password) usage('passwords do not match');
     }
 
+    let salt = null;
+    if (keyFrom) {
+      if (!fs.existsSync(keyFrom)) usage('--key-from page not found: ' + keyFrom);
+      const other = fs.readFileSync(keyFrom, 'utf8').match(PAYLOAD_RE);
+      if (!other || !other[2].trim()) usage(keyFrom + ' has no encrypted payload to take the key from');
+      salt = Buffer.from(JSON.parse(other[2]).salt, 'base64');
+    }
+
     const content = fs.readFileSync(input, 'utf8');
-    const payload = JSON.stringify(encrypt(content, password));
+    const payload = JSON.stringify(encrypt(content, password, salt));
     fs.writeFileSync(output, page.replace(PAYLOAD_RE, '$1' + payload + '$3'));
     console.log('Encrypted ' + input + ' into ' + output + ' (' + content.length + ' chars).');
     return;
