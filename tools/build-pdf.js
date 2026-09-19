@@ -62,7 +62,7 @@ const PDF_CSS = `
   html { scroll-behavior: auto !important; }
   body { background: #fff !important; }
   #protectedContent { background: #fff !important; }
-  .signal-report { font-size: 14.5px; }
+  .signal-report { font-size: 15.5px; }
   .signal-report .shell { display: block !important; max-width: none !important; padding: 0 !important; margin: 0 !important; }
   .signal-report main { padding: 0 !important; }
   .signal-report section { margin: 0 0 44px !important; }
@@ -77,8 +77,8 @@ const PDF_CSS = `
   .signal-report .ceonote p { break-inside: avoid; }
   /* Grids with a rule-coloured background leave a blank block when split across pages: render them as separated lists. */
   .signal-report .ledger, .signal-report .deals, .signal-report .prog { background: transparent !important; border: none !important; gap: 0 !important; border-radius: 0 !important; }
-  .signal-report .ent, .signal-report .deal, .signal-report .prog > div { border-bottom: 1px solid #ece8e1; padding-left: 4px !important; padding-right: 4px !important; }
-  .signal-report .ent:first-child, .signal-report .deal:first-child, .signal-report .prog > div:first-child { border-top: 1px solid #ece8e1; }
+  .signal-report .ent, .signal-report .deal, .signal-report .prog > div { border-bottom: 1px solid #D9D9DF; padding-left: 4px !important; padding-right: 4px !important; }
+  .signal-report .ent:first-child, .signal-report .deal:first-child, .signal-report .prog > div:first-child { border-top: 1px solid #D9D9DF; }
   /* Timelines are long: let them flow across pages without a card around them. */
   .signal-report .fig:has(.tl) { break-inside: auto; border: none !important; padding: 0 !important; background: transparent !important; }
   .signal-report .fig, .signal-report .rt, .signal-report .callout, .signal-report .ceonote, .signal-report .stats,
@@ -86,20 +86,20 @@ const PDF_CSS = `
   .signal-report .ceonote p { font-size: 1rem; }
   .signal-report .ceonote p:first-of-type { font-size: 1.08rem; }
   .signal-report .rt-row { align-items: stretch !important; }
-  .signal-report button.chip { border-color: #d6d3cd; }
+  .signal-report button.chip { border-color: #B9B9C2; }
   a[href] { text-decoration: none; }
 
   .pdf-cover { break-after: page; height: 9.1in; box-sizing: border-box; display: flex; flex-direction: column;
-    justify-content: flex-end; padding: 0 0 0.6in; border-bottom: 3px solid #c9a84c; font-family: Inter, system-ui, sans-serif; color: #1c1917; }
-  .pdf-cover .brand { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #78716c; margin-bottom: auto; padding-top: 0.2in; }
+    justify-content: flex-end; padding: 0 0 0.6in; border-bottom: 3px solid #C0B040; font-family: Jost, system-ui, sans-serif; color: #14141F; }
+  .pdf-cover .brand { display: flex; align-items: center; gap: 14px; font-family: Cinzel, serif; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #5C5C70; margin-bottom: auto; padding-top: 0.2in; }
   .pdf-cover .brand img { height: 44px; width: auto; }
-  .pdf-cover .over { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #b08a34; margin-bottom: 14px; }
-  .pdf-cover h1 { font-size: 64px; line-height: 1; letter-spacing: -.03em; margin: 0 0 18px; font-weight: 800; color: #1c1917; }
-  .pdf-cover .issue { font-size: 22px; font-weight: 600; margin: 0 0 22px; color: #292524; }
-  .pdf-cover .tag { font-size: 16px; line-height: 1.5; color: #57534e; max-width: 34em; margin: 0 0 28px; }
-  .pdf-cover .focus { display: inline-block; border: 1px solid #b08a34; color: #b08a34; border-radius: 50px; padding: 5px 14px; font-size: 12px; font-weight: 600; margin-bottom: 40px; }
-  .pdf-cover .meta { font-size: 11px; color: #78716c; line-height: 1.7; }
-  .pdf-cover .meta b { color: #1c1917; font-weight: 600; }
+  .pdf-cover .over { font-family: Cinzel, serif; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #8A7A28; margin-bottom: 16px; }
+  .pdf-cover h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 84px; line-height: 1; letter-spacing: -.015em; margin: 0 0 18px; font-weight: 300; color: #14141F; }
+  .pdf-cover .issue { font-family: "Cormorant Garamond", Georgia, serif; font-size: 30px; font-weight: 500; margin: 0 0 22px; color: #1A1A2E; }
+  .pdf-cover .tag { font-size: 16px; font-weight: 300; line-height: 1.55; color: #3D3D52; max-width: 34em; margin: 0 0 28px; }
+  .pdf-cover .focus { display: inline-block; border: 1px solid #E9E1B6; background: #F3EFDC; color: #6E611F; border-radius: 999px; padding: 5px 14px; font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 40px; }
+  .pdf-cover .meta { font-family: "IBM Plex Mono", monospace; font-size: 10px; color: #8A8A99; line-height: 1.7; }
+  .pdf-cover .meta b { color: #14141F; font-weight: 500; }
 `;
 
 const COVER_HTML = `
@@ -152,7 +152,7 @@ const COVER_HTML = `
     }, COVER_HTML);
     await page.waitForTimeout(1200);
     await page.evaluate(function() { return document.fonts ? document.fonts.ready : null; });
-    const footer = '<div style="font-family:Inter,system-ui,sans-serif;font-size:7.5px;color:#78716c;width:100%;padding:0 0.6in;display:flex;justify-content:space-between;">' +
+    const footer = '<div style="font-family:Jost,system-ui,sans-serif;font-size:7.5px;color:#8A8A99;width:100%;padding:0 0.6in;display:flex;justify-content:space-between;">' +
       '<span>The Signal Report &middot; Issue 01 &middot; Third quarter 2026 &middot; CEO Roundtable on Cancer and Project Data Sphere</span>' +
       '<span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>';
     await page.pdf({

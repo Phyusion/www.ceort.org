@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://www.ceort.org/images/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -61,11 +61,13 @@
         <a href="members.html">Members</a>
         <a href="events.html" class="active">Events</a>
         <a href="news.html">News</a>
-        <a href="donate.html">Donate</a>
-        <a href="members-only.html" class="nav-portal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Member Portal</a>
-        <a href="contact.html" class="nav-cta">Get Involved</a>
+        <a href="members-only.html" class="nav-portal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Member Portal</a>
+        <span class="nav-actions">
+          <a href="donate.html" class="btn btn-gold btn-sm">Donate</a>
+          <a href="contact.html" class="btn btn-secondary btn-sm">Get Involved <span class="arrow">&rarr;</span></a>
+        </span>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -117,15 +119,15 @@
           <p>Participation is limited to members and invited guests, preserving a setting in which leaders can engage candidly on the scientific, regulatory, and operational questions defining the field.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Washington, DC
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               Multi-Day
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
               Members &amp; Invited Guests
             </span>
           </div>
@@ -159,7 +161,7 @@
             <p class="am-teaser">Leaders from industry, academia, government, and advocacy convened to chart strategies for regulatory modernization, AI integration, and next-generation therapeutics.</p>
           </div>
           <span class="am-expand-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
           </span>
         </div>
 
@@ -172,7 +174,7 @@
               <div class="am-session-text">
                 <h4>Opening Remarks</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   David Reese (Amgen), Sean Khozin (CEORT/PDS)
                 </div>
                 <p>Featured video with Coach Mike Krzyzewski and Chris Viehbacher on leadership and purpose.</p>
@@ -190,7 +192,7 @@
               <div class="am-session-text">
                 <h4>Fireside Chat &mdash; FDA&rsquo;s Oncology Agenda</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Peter Pisters (MD Anderson) with FDA Commissioner Martin Makary
                 </div>
                 <p>Regulatory flexibility, adaptive trial designs, real-world data, AI in regulatory submissions, digital twin control datasets.</p>
@@ -208,7 +210,7 @@
               <div class="am-session-text">
                 <h4>CEO Panel &mdash; Leading Transformation</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Sunil Verma (AstraZeneca), Christopher Viehbacher (Biogen), Josh Bilenker (Treeline), Kim Rathmell (OSU James)
                 </div>
                 <p>Organizational transformation, next wave beyond checkpoint inhibitors/ADCs, regulatory modernization, leadership across sectors.</p>
@@ -226,7 +228,7 @@
               <div class="am-session-text">
                 <h4>Agentic AI in Clinical Trials</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Michelle Longmire (Medable), Kiran Patel (J&amp;J), Warren Kibbe (NCI), Matthew Ko (DeepScribe), James Kugler (EMD Digital)
                 </div>
                 <p>AI-powered trial automation, patient recruitment, agentic AI in trial operations.</p>
@@ -244,7 +246,7 @@
               <div class="am-session-text">
                 <h4>Innovator Spotlights</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Jon McDunn (PDS), Rafael Rosengarten (Genialis), Tony Blau (All4Cure), Aaron Smith (Unlearn), Julie Gerardi (Bioptimus)
                 </div>
                 <p>Showcasing breakthrough innovation across data science, precision oncology, and AI-driven drug discovery.</p>
@@ -262,7 +264,7 @@
               <div class="am-session-text">
                 <h4>Aligning Policy, Infrastructure &amp; Capital</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Paul Howard (Amicus), Kevin Bugin (Amgen), Robin Prasad (Bold Brain Capital), Andrew Emmett (Pfizer), Kristin Schneeman (Milken FasterCures)
                 </div>
                 <p>Capacity constraints, evidentiary fragmentation, shared validation environments, trial-network operationalization.</p>
@@ -280,7 +282,7 @@
               <div class="am-session-text">
                 <h4>Fireside Chat &mdash; NCI Blueprint</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Sean Khozin with Anthony Letai (NCI Director)
                 </div>
                 <p>NCI vision, public-private partnerships, precision oncology infrastructure.</p>
@@ -298,7 +300,7 @@
               <div class="am-session-text">
                 <h4>AI Tumor Assessment Standards</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Sean Khozin, Gail Stephens (SAS), Ella Pavlechko (SAS)
                 </div>
                 <p>autoRECIST demonstration, Total Tumor Burden Index (TTBI), AI-powered volumetric 3D tumor assessment.</p>
@@ -316,7 +318,7 @@
               <div class="am-session-text">
                 <h4>Endpoints &amp; Evidence</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Gideon Blumenthal (Merck), Marjorie Green (Merck), Stuart "Stu" Bailey (EMD Serono), David Spetzler (Caris Life Sciences), Jean-Charles Soria (Amgen)
                 </div>
                 <p>Redefining surrogate endpoints, MRD/ctDNA validation, precision regulation, confirmatory trial requirements.</p>
@@ -334,7 +336,7 @@
               <div class="am-session-text">
                 <h4>Next-Generation Immunotherapy</h4>
                 <div class="am-speakers">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   Zhen Su (Marengo), James Gulley (NCI), Sushil Patel (Replimune), Christian Hinrichs (Rutgers), Alicia Zhou (Cancer Research Institute)
                 </div>
                 <p>Oncolytic viruses, advanced cellular therapy (TIL, logic-gated CAR-T, in vivo cell engineering), bispecifics, NK-cell platforms, manufacturing scale, perioperative opportunity.</p>
@@ -402,7 +404,7 @@
           <p>The CEO Roundtable on Cancer participated in the American Society of Clinical Oncology (ASCO) 2025 Annual Meeting, highlighting a new era in oncology innovation and the organization&rsquo;s role in advancing cancer research and care through collaborative initiatives.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Chicago, IL
             </span>
           </div>
@@ -420,7 +422,7 @@
           <p>The eleventh installment in the landmark FDA&ndash;Project Data Sphere symposia series, continuing the multi-year partnership focused on building consensus within the scientific community to advance cancer research through data sharing, AI, and regulatory science.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Bethesda, MD
             </span>
           </div>
@@ -438,11 +440,11 @@
           <p>Themed &ldquo;Advancing Cancer Research and Care through Collaborative Innovation,&rdquo; the 2024 annual meeting featured keynotes and panel discussions on AI in cancer care, improving access to clinical trials in underserved communities, and a spotlight on Going for Gold partners.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               SAS Institute, Cary, NC
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               September 24&ndash;25
             </span>
           </div>
@@ -460,11 +462,11 @@
           <p>The Partnership Summit highlighted the CEO Roundtable&rsquo;s engagement with the Cancer Moonshot initiative, the Cancer Stage Shifting Initiative, Going for Gold expansion, and the launch of the ACE (Access, Choice and Education) Cohort in Clinical Trials.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Washington, D.C.
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               February 29 &ndash; March 1
             </span>
           </div>
@@ -482,11 +484,11 @@
           <p>The annual meeting convened CEORT members and partners to review progress on key initiatives including the Gold Standard program, Project Data Sphere, and new health equity partnerships.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               SAS Institute, Cary, NC
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               November 8&ndash;9
             </span>
           </div>
@@ -504,11 +506,11 @@
           <p>The Going for Gold Summit brought together Gold Standard companies, HBCUs, and community health organizations to advance equitable cancer care and expand the initiative&rsquo;s reach among communities disproportionately affected by cancer.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               SAS Institute, Cary, NC
             </span>
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               June 6&ndash;7
             </span>
           </div>
@@ -537,7 +539,7 @@
           <p>Focused on offering new approaches to think about data sharing and the reuse of clinical trial data, exploring how shared data can accelerate oncology research and improve patient outcomes.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Virtual
             </span>
           </div>
@@ -555,7 +557,7 @@
           <p>The first virtual symposium in the series addressed critical questions in rare cancer registries, which hold the potential to solve some of the most difficult challenges to advancing treatment for rare cancers&mdash;accounting for more than 20% of cancers reported worldwide.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Virtual
             </span>
           </div>
@@ -573,7 +575,7 @@
           <p>Focused on the development of machine learning algorithms based on CT images to improve the efficiency and consistency of tumor measurements. CT scans offer a consistent methodology applicable for 90% of solid tumors.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Stanford University
             </span>
           </div>
@@ -591,7 +593,7 @@
           <p>Addressed immune-related adverse events and checkpoint blockade combination therapies, exploring the growing complexity of immunotherapy treatment landscapes in oncology.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Bethesda, MD
             </span>
           </div>
@@ -609,7 +611,7 @@
           <p>Co-hosted near FDA headquarters, the fifth symposium explored &ldquo;Growing Dimensions of Big Data in Cancer Research,&rdquo; examining how large-scale data analytics can transform cancer treatment and prevention strategies.</p>
           <div class="event-meta">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Bethesda, MD
             </span>
           </div>
