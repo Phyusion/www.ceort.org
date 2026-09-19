@@ -4611,3 +4611,24 @@ body:not(.protected-unlocked) .lock-bar {
     margin: calc(var(--space-8) * -1) calc(var(--space-6) * -1) var(--space-6);
   }
 }
+
+/* ===== Report tools: download beside the focus badge; lock bar holds two buttons ===== */
+.lock-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.report-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-9);
+}
+
+.report-tools .btn svg {
+  width: 14px;
+  height: 14px;
+}

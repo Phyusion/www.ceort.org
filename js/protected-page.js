@@ -36,6 +36,7 @@
   }
 
   var storageKey = 'protected-page:' + payload.salt;
+  var currentKey = null;
 
   function fromBase64(str) {
     var bin = atob(str);
@@ -97,6 +98,7 @@
     // Animate any fade-in blocks inside the revealed content.
     var blocks = content.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
     for (var i = 0; i < blocks.length; i++) blocks[i].classList.add('visible');
+    bindDownloads();
     // Scripts inserted via innerHTML do not run; re-create them so interactive
     // content (charts, filters) initialises. Runs after the content is visible
     // so layout measurements are correct.
@@ -109,6 +111,66 @@
       s.textContent = scripts[j].textContent;
       scripts[j].parentNode.replaceChild(s, scripts[j]);
     }
+  }
+
+  // ----- Encrypted file downloads -----
+  // A button with data-protected-file="files/x.pdf.enc" fetches that file,
+  // decrypts it with the page key (the file must be encrypted with
+  // --key-from this page) and hands the browser a download.
+  // File layout: "CEORTENC" + version byte + 16-byte salt + 12-byte iv + AES-GCM ciphertext.
+  function bindDownloads() {
+    var buttons = document.querySelectorAll('[data-protected-file]');
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].getAttribute('data-bound')) continue;
+      buttons[i].setAttribute('data-bound', '1');
+      buttons[i].addEventListener('click', onDownloadClick);
+    }
+  }
+
+  function onDownloadClick(e) {
+    e.preventDefault();
+    var btn = e.currentTarget;
+    var url = btn.getAttribute('data-protected-file');
+    var name = btn.getAttribute('data-filename') || 'download';
+    var label = btn.textContent;
+    if (!currentKey) { alert('Please unlock the page first.'); return; }
+    btn.disabled = true;
+    btn.textContent = 'Preparing\u2026';
+    fetch(url, { cache: 'force-cache' })
+      .then(function(res) {
+        if (!res.ok) throw new Error('fetch ' + res.status);
+        return res.arrayBuffer();
+      })
+      .then(function(buf) {
+        var bytes = new Uint8Array(buf);
+        var magic = String.fromCharCode.apply(null, bytes.subarray(0, 8));
+        if (magic !== 'CEORTENC' || bytes[8] !== 1) throw new Error('bad file');
+        var salt = toBase64(bytes.subarray(9, 25));
+        if (salt !== payload.salt) throw new Error('key mismatch');
+        var iv = bytes.subarray(25, 37);
+        var ct = bytes.subarray(37);
+        return crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, currentKey, ct);
+      })
+      .then(function(plain) {
+        var type = /\.pdf$/i.test(name) ? 'application/pdf' : 'application/octet-stream';
+        var blob = new Blob([plain], { type: type });
+        var href = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = href;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function() { URL.revokeObjectURL(href); }, 60000);
+        btn.disabled = false;
+        btn.textContent = label;
+      })
+      .catch(function(err) {
+        btn.disabled = false;
+        btn.textContent = label;
+        alert('Sorry, the download could not be prepared. Please reload the page and try again.');
+        if (window.console) console.error(err);
+      });
   }
 
   function remember(key) {
@@ -132,9 +194,9 @@
     try { stored = sessionStorage.getItem(storageKey); } catch (e) {}
     if (!stored) return;
     crypto.subtle.importKey('raw', fromBase64(stored), { name: 'AES-GCM' }, true, ['decrypt'])
-      .then(decryptWith)
+      .then(function(key) { currentKey = key; return decryptWith(key); })
       .then(reveal)
-      .catch(forget);
+      .catch(function() { currentKey = null; forget(); });
   })();
 
   form.addEventListener('submit', function(e) {
@@ -147,6 +209,7 @@
     deriveKey(password)
       .then(function(key) { derived = key; return decryptWith(key); })
       .then(function(html) {
+        currentKey = derived;
         setBusy(false);
         input.value = '';
         reveal(html);
@@ -163,6 +226,7 @@
   if (lockButton) {
     lockButton.addEventListener('click', function() {
       forget();
+      currentKey = null;
       content.innerHTML = '';
       content.hidden = true;
       gate.hidden = false;
