@@ -4483,7 +4483,9 @@ body.nav-open {
 }
 
 .lock-bar {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
   padding-bottom: 40px;
 }
 
@@ -4678,4 +4680,23 @@ body:not(.protected-unlocked) .lock-bar {
   .issue-card {
     padding: 24px 22px;
   }
+}
+
+/* ===== Report tools (download) ===== */
+.report-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.report-tools .focusband {
+  margin-bottom: 0 !important;
+}
+
+.report-tools .btn svg {
+  width: 15px;
+  height: 15px;
 }

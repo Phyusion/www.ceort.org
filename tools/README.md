@@ -47,6 +47,23 @@ pages in the same browser tab:
 If you change the portal password, re-encrypt the portal first and then every
 page that shares its key, in that order.
 
+## The PDF download
+
+The report page offers a "Download PDF" button. The PDF is generated from the
+unlocked page and then encrypted with the page's key, so the committed file
+(`files/signal-report-q3-2026.pdf.enc`) is unreadable without the password.
+The browser decrypts it after unlock and hands it over as a normal download.
+
+Rebuild it whenever the report content or password changes:
+
+    PAGE_PASSWORD='...' node tools/build-pdf.js signal-report-q3-2026.html tools/private/signal-report-q3-2026.pdf
+    PAGE_PASSWORD='...' node tools/protect-page.js encrypt-file tools/private/signal-report-q3-2026.pdf files/signal-report-q3-2026.pdf.enc --key-from signal-report-q3-2026.html
+
+`build-pdf.js` needs the `playwright` package with Chromium
+(`npm i -D playwright && npx playwright install chromium`) and the Inter
+font installed locally so the PDF matches the site typography. Never commit
+the unencrypted PDF: keep it in `tools/private/`.
+
 ## Adding another protected page
 
 Copy `signal-report-q3-2026.html` to a new file, keep the empty

@@ -9,6 +9,10 @@
  * Usage:
  *   node tools/protect-page.js encrypt <content.html> <page.html> [--key-from <other-page.html>]
  *   node tools/protect-page.js decrypt <page.html> <content.html>
+ *   node tools/protect-page.js encrypt-file <file> <file.enc> --key-from <page.html>
+ *
+ * encrypt-file produces a binary download (for example a PDF) that a
+ * data-protected-file button on the given page can decrypt in the browser.
  *
  * --key-from reuses the salt of an already-encrypted page, so that (with the
  * same password) unlocking either page in a browser tab also unlocks the other.
@@ -30,7 +34,7 @@ const PAYLOAD_RE = /(<script type="application\/json" id="protected-payload">)([
 
 function usage(message) {
   if (message) console.error('Error: ' + message + '\n');
-  console.error('Usage:\n  node tools/protect-page.js encrypt <content.html> <page.html> [--key-from <other-page.html>]\n  node tools/protect-page.js decrypt <page.html> <content.html>');
+  console.error('Usage:\n  node tools/protect-page.js encrypt <content.html> <page.html> [--key-from <other-page.html>]\n  node tools/protect-page.js decrypt <page.html> <content.html>\n  node tools/protect-page.js encrypt-file <file> <file.enc> --key-from <page.html>');
   process.exit(1);
 }
 
@@ -73,6 +77,23 @@ function encrypt(plaintext, password, salt) {
   };
 }
 
+function saltFromPage(pagePath) {
+  if (!fs.existsSync(pagePath)) usage('--key-from page not found: ' + pagePath);
+  const other = fs.readFileSync(pagePath, 'utf8').match(PAYLOAD_RE);
+  if (!other || !other[2].trim()) usage(pagePath + ' has no encrypted payload to take the key from');
+  return Buffer.from(JSON.parse(other[2]).salt, 'base64');
+}
+
+// Binary layout read by js/protected-page.js:
+// "CEORTENC" + version 1 + 16-byte salt + 12-byte iv + AES-256-GCM ciphertext with tag.
+function encryptFile(data, password, salt) {
+  const iv = crypto.randomBytes(12);
+  const key = deriveKey(password, salt);
+  const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
+  const body = Buffer.concat([cipher.update(data), cipher.final()]);
+  return Buffer.concat([Buffer.from('CEORTENC', 'ascii'), Buffer.from([1]), salt, iv, body, cipher.getAuthTag()]);
+}
+
 function decrypt(payload, password) {
   const salt = Buffer.from(payload.salt, 'base64');
   const iv = Buffer.from(payload.iv, 'base64');
@@ -110,18 +131,23 @@ async function main() {
       if (confirm !== password) usage('passwords do not match');
     }
 
-    let salt = null;
-    if (keyFrom) {
-      if (!fs.existsSync(keyFrom)) usage('--key-from page not found: ' + keyFrom);
-      const other = fs.readFileSync(keyFrom, 'utf8').match(PAYLOAD_RE);
-      if (!other || !other[2].trim()) usage(keyFrom + ' has no encrypted payload to take the key from');
-      salt = Buffer.from(JSON.parse(other[2]).salt, 'base64');
-    }
+    const salt = keyFrom ? saltFromPage(keyFrom) : null;
 
     const content = fs.readFileSync(input, 'utf8');
     const payload = JSON.stringify(encrypt(content, password, salt));
     fs.writeFileSync(output, page.replace(PAYLOAD_RE, '$1' + payload + '$3'));
     console.log('Encrypted ' + input + ' into ' + output + ' (' + content.length + ' chars).');
+    return;
+  }
+
+  if (command === 'encrypt-file') {
+    if (!fs.existsSync(input)) usage('file not found: ' + input);
+    if (!keyFrom) usage('encrypt-file needs --key-from <page.html> so the page can decrypt it');
+    const salt = saltFromPage(keyFrom);
+    const password = await readPassword('Password for ' + keyFrom + ': ');
+    const data = fs.readFileSync(input);
+    fs.writeFileSync(output, encryptFile(data, password, salt));
+    console.log('Encrypted ' + input + ' into ' + output + ' (' + data.length + ' bytes).');
     return;
   }
 
