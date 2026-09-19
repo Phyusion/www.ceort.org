@@ -209,7 +209,7 @@ ul, ol {
   margin-left: auto;
 }
 
-.nav-main a {
+.nav-main > a {
   position: relative;
   padding-bottom: var(--space-2);
   font-family: var(--font-sans);
@@ -224,11 +224,11 @@ ul, ol {
   transition: var(--transition-color);
 }
 
-.nav-main a:hover {
+.nav-main > a:hover {
   color: var(--ink-900);
 }
 
-.nav-main a.active {
+.nav-main > a.active {
   color: var(--ink-900);
   border-bottom-color: var(--gold-500);
 }
@@ -253,28 +253,6 @@ ul, ol {
   color: var(--gold-700);
 }
 
-/* Get Involved — outline button in the header rail */
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--space-3) var(--space-6) !important;
-  border: var(--border-w) solid var(--border-default);
-  border-bottom-width: var(--border-w) !important;
-  border-radius: var(--radius-sm);
-  color: var(--ink-900) !important;
-  letter-spacing: var(--tracking-caps);
-  background: transparent;
-}
-
-.nav-cta:hover {
-  background: var(--surface-alt);
-  border-color: var(--ink-400);
-}
-
-.nav-cta.active {
-  border-bottom-color: var(--border-default) !important;
-}
-
 /* Donate + Get Involved rail */
 .nav-actions {
   display: inline-flex;
@@ -284,7 +262,10 @@ ul, ol {
 }
 
 .nav-actions .btn {
-  border-bottom-width: var(--border-w);
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -475,9 +456,10 @@ body.nav-open {
   color: var(--ink-900);
 }
 
-/* The arrow is a typographic element, not an icon. It does not travel. */
+/* The arrow is a typographic element, not an icon. It sets at the label's
+   own size and does not travel on hover. */
 .arrow {
-  font-size: .95em;
+  font-size: 1em;
 }
 
 /* ===== Sections ===== */
@@ -1246,7 +1228,7 @@ body.nav-open {
   gap: var(--space-6);
   margin-top: var(--space-4);
   font-size: var(--text-sm);
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 .event-meta span {
@@ -3258,9 +3240,9 @@ body:not(.protected-unlocked) .lock-bar {
 }
 
 .iraes-partners p {
-  font-size: 0.85rem;
-  color: var(--text-subtle);
-  line-height: 1.6;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: var(--leading-body);
 }
 
 .iraes-partners strong {
@@ -3272,6 +3254,68 @@ body:not(.protected-unlocked) .lock-bar {
   .iraes-achievements-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* The full nav rail (six sections, the portal link and two actions) stops
+   fitting beside the wordmark below this width, so it collapses to the
+   drawer here rather than at the phone breakpoint. */
+@media (max-width: 1080px) {
+  .nav-main {
+    display: none;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    height: calc(100dvh - var(--header-h));
+    background: var(--surface-page);
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-7) var(--gutter);
+    gap: 0;
+    border-top: var(--border-w) solid var(--border-hairline);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 999;
+    margin-left: 0;
+  }
+
+  .nav-main.open {
+    display: flex;
+  }
+
+  .nav-main > a {
+    padding: var(--space-5) 0;
+    width: 100%;
+    font-size: var(--text-sm);
+    border-bottom: var(--border-w) solid var(--border-hairline);
+  }
+
+  .nav-main > a.active {
+    border-bottom-color: var(--gold-500);
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: var(--space-4);
+    margin: var(--space-6) 0 0;
+  }
+
+  .nav-actions .btn {
+    flex: 1;
+    justify-content: center;
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .nav-portal {
+    padding: var(--space-5) 0 !important;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -4390,70 +4434,6 @@ body:not(.protected-unlocked) .lock-bar {
 }
 
 @media (max-width: 768px) {
-  .nav-main {
-    display: none;
-    position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    height: calc(100dvh - var(--header-h));
-    background: var(--surface-page);
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--space-7) var(--gutter);
-    gap: 0;
-    border-top: var(--border-w) solid var(--border-hairline);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    z-index: 999;
-    margin-left: 0;
-  }
-
-  .nav-main.open {
-    display: flex;
-  }
-
-  .nav-main a {
-    padding: var(--space-5) 0;
-    width: 100%;
-    font-size: var(--text-sm);
-    border-bottom: var(--border-w) solid var(--border-hairline);
-  }
-
-  .nav-main a.active {
-    border-bottom-color: var(--gold-500);
-  }
-
-  .nav-actions {
-    display: flex;
-    gap: var(--space-4);
-    margin: var(--space-6) 0 0;
-  }
-
-  .nav-actions .btn {
-    flex: 1;
-    justify-content: center;
-    padding: var(--space-5) var(--space-6);
-  }
-
-  .nav-cta {
-    margin-top: var(--space-6);
-    justify-content: center;
-    text-align: center;
-    border-bottom-width: var(--border-w) !important;
-    padding: var(--space-5) var(--space-7) !important;
-  }
-
-  .nav-portal {
-    padding: var(--space-5) 0 !important;
-  }
-
-  .nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .logo-img {
     height: 36px;
   }
