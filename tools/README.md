@@ -23,7 +23,10 @@ commit anything in that folder**: every committed file is published.
 
 3. Re-encrypt it into the page (prompts for the password twice):
 
-       node tools/protect-page.js encrypt tools/private/members-only.content.html members-only.html
+       node tools/protect-page.js encrypt tools/private/members-only.content.html members-only.html --key-from members-only.html
+
+   Passing `--key-from` with the page itself keeps its salt, so the report
+   page and the encrypted PDF keep working without being re-encrypted.
 
 4. Commit and push `members-only.html`.
 
@@ -37,10 +40,16 @@ variable instead of typing it, which is handy for scripted updates:
 
 ## The Signal Report
 
-The report's source is `tools/private/signal-report-q3-2026.content.html`: its
-scoped stylesheet, the article markup, and the chart script, all in one
-fragment. Re-encrypt it with the portal's key so one password unlocks both
-pages in the same browser tab:
+Each issue arrives as a standalone HTML file. `tools/build-report.py` turns it
+into the fragment the protected page injects (the report's own stylesheet
+scoped under `.signal-report`, brand bar and masthead removed, the issue line,
+focus badge and "Download PDF" button placed at the top of the article):
+
+    python3 tools/build-report.py tools/private/signal-report-q3-2026.source.html tools/private/signal-report-q3-2026.content.html \
+      --pdf files/signal-report-q3-2026.pdf.enc --filename The-Signal-Report-Q3-2026.pdf
+
+Then encrypt it with the portal's key so one password unlocks both pages in
+the same browser tab:
 
     node tools/protect-page.js encrypt tools/private/signal-report-q3-2026.content.html signal-report-q3-2026.html --key-from members-only.html
 
@@ -49,15 +58,18 @@ page that shares its key, in that order.
 
 ## The PDF download
 
-The report page offers a "Download PDF" button. The PDF is generated from the
-unlocked page and then encrypted with the page's key, so the committed file
-(`files/signal-report-q3-2026.pdf.enc`) is unreadable without the password.
-The browser decrypts it after unlock and hands it over as a normal download.
+The report page offers a "Download PDF" button. The PDF is encrypted with the
+page's key, so the committed file (`files/signal-report-q3-2026.pdf.enc`) is
+unreadable without the password. The browser decrypts it after unlock and
+hands it over as a normal download.
 
-Rebuild it whenever the report content or password changes:
+When a PDF is supplied with the issue, copy it to `tools/private/` and encrypt
+it. When none is supplied, render one from the unlocked page first:
 
     PAGE_PASSWORD='...' node tools/build-pdf.js signal-report-q3-2026.html tools/private/signal-report-q3-2026.pdf
     PAGE_PASSWORD='...' node tools/protect-page.js encrypt-file tools/private/signal-report-q3-2026.pdf files/signal-report-q3-2026.pdf.enc --key-from signal-report-q3-2026.html
+
+Re-encrypt it whenever the password changes.
 
 `build-pdf.js` needs the `playwright` package with Chromium
 (`npm i -D playwright && npx playwright install chromium`) and the Inter
@@ -84,3 +96,6 @@ the two script tags at the bottom, write the page's content to a new file in
   linked from the page (PDFs, images) are **not** protected unless they are
   hosted somewhere that requires its own login. Do not put sensitive documents
   in this repository.
+
+The full know-how, including verification steps and gotchas, is in the
+project skill `.claude/skills/protected-pages/SKILL.md`.
